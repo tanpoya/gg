@@ -4,7 +4,7 @@
 -> 데일리 미션 주소:
 https://drive.google.com/drive/folders/1P-suVVa6anWBdieLX4QzaZe1rkEsivz6?usp=sharing
 
-1. 교재: NCS 5권
+1. 교재: 5권
 
 2. 시험: 과목별 평가(각 과목이 끝나는날)
 
@@ -23,7 +23,7 @@ https://github.com/tombap8/GITA-FSD-JD22
 7. 사이트 벤치마킹 포털
 
 (1) 디비컷
-https://www.dbcut.com/bbs/index.php
+https://www.dbcut.com/
 
 (2) 굿디자인웹
 https://www.gdweb.co.kr/main/
