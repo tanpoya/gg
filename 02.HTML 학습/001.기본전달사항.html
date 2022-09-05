@@ -8,6 +8,38 @@
         <title>자바 기반 풀스택 개발자 과정 - 기본전달사항</title>
     </head>
     <body>
+        <!-- 
+            [ 태그 기본구성 ]
+            <태그명 속성명="값">데이터</태그명>
+            - w3c에서 태그명은 소문자, 속성값은 쌍따움표로 쓰도록 권고
+            - 홀로 존재하는 태그도 있음: br, meta
+
+            [ html문ㅁ서 기본태그 ]
+            - <!doctype html> 문서선언부(html버전을 규정)
+            - html, head, body -> 가장 큰 기본구성 요소들
+
+            [h1 ~ h6 헤딩요소]
+            - 크기별 순서별 머릿글표시
+            - 블록요소 (옆에 아무도 못옴)
+
+            [ a요소(element) ]
+            - 다른 페이지로 이동하기 위한 요소
+            - 속성(attribute)
+            1) href (hyper text reference) : 이동주소 참조속성
+            -> 값으로 "#이름"이라고 쓰면 같은 페이지안의 아이디요소의 위치로 이동함
+            2) target: 열린창옵션 속성(_blank: 새창 열기)
+            -> 기본값 _slef : 자신창
+
+            [ br요소 ]
+            - 인라인의 줄바꿈요소 (break)
+            - 홀로태그 (닫는 태그 없음)
+
+            (참고: 요소와 태그의 차이)
+            요소(elemnet)는 공통적인 규칙이나 속성을 가진 
+            html구조화 부분을 말함
+            태그(tag)는 요소를 구체적으로 페이지에 적용할때 하나하나의 요소를 지칭할때 사용함
+
+         -->
         <h1>[ 자바 기반 풀스택 개발자 과정 - 기본전달사항 ]</h1>
         탐쌤이멜: tombap@naver.com <br>
         
@@ -20,14 +52,14 @@
         <h2>2. 시험: </h2>
         과목별 평가(각 과목이 끝나는날)
         
-        <h2>3. 공식교과서: </h2>
+        <h2 id="book">3. 공식교과서: </h2>
         w3c 스쿨 <br>
         <a href="https://www.w3schools.com/" target="_blank">https://www.w3schools.com/</a>
         
         <h2>4. 소스 빌드용 폴더 생성하기!</h2>
         
         <h2>5. 강의 동영상 백업 유튜브: </h2>
-        자바 기반 풀스택 개발자 과정
+        자바 기반 풀스택 개발자 과정 <br>
         <a href="https://www.youtube.com/channel/UCdHkJVwwhMzlza-iRYIgc5A" target="_blank">https://www.youtube.com/channel/UCdHkJVwwhMzlza-iRYIgc5A</a>
         
         <h2>6. 소스 깃허브 : </h2>
@@ -62,15 +94,28 @@
         
         <h2>10. UI/UX 참고자료</h2>
         
-        1) UX 개념의 예 :  피아노건반 계단 <br>
+        <h3>1) UX 개념의 예 :  피아노건반 계단 <br></h3>
         - The Fun Theory 동영상 시리즈 1번
         <a href="https://youtu.be/SByymar3bds" target="_blank">https://youtu.be/SByymar3bds</a>
         <br><br>
-        2) 인터페이스 개념
+        <h3>2) 인터페이스 개념</h3>
         - 나건교수 동영상
         <a href="https://youtu.be/EKFM5yeXdck" target="_blank">https://youtu.be/EKFM5yeXdck</a> 
         <br>
         -> 소통이 이루지는 장소에서 사용되는 
         수단과 방법을 인터페이스라고함!
+
+        <h2>
+            <a href="#">맨위로가기</a>
+            <a href="#book">공식교과서</a>
+            <!-- 
+                href값으로 "#"만 쓰면 페이지 최상단으로 이동
+                "#아이디명" 을 쓰면 아이디 요소의 위치로 이동 
+
+                각요소는 이름을 줄 수 있다
+                - id 속성 : id="아이디명" -> 한 페이지 안에 유일함
+                - class 속송 : class="클래스명" -> 다중사용가능
+            -->
+        </h2>
     </body>
 </html>
