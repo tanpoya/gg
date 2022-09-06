@@ -115,7 +115,7 @@ footer.info {
     color: #333;
 }
 /* 이름만 구분한 span요소 */
-        .o address span {
+        .info address span {
 /* 글자체 ff */
 font-family: 'Black And White Picture', sans-serif;
 /* 글자색 */
