@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* Info PJ 메인 CSS - main.css */
+/* Info PJ 공통 CSS - common.css */
 
 /* 박스공통 */
 .part {
@@ -89,16 +89,6 @@ header h1 {
     margin-right: -9px;
 }
 
-/* 메인영역 이미지 */
-/* main img {
-    width: 100%;
-} */
-.prlogo img {
-    width: 76px;
-    /* border: 1px solid red; */
-    box-sizing: border-box;
-    margin: 5px;
-}
 
 /* 하단영역 */
 footer.info {
