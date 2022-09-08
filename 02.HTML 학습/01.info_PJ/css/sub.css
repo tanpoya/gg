@@ -132,7 +132,7 @@
 }
 
 /* 2-6. 기사원문 */
-.org a {
+.main .org a {
     padding: 10px;
     font-size: 20px;
     /* 글자색 c */
@@ -142,7 +142,7 @@
     /* 보더 */
     border: 1px dashed lightblue;
 }
-.org a:hover {
+.main .org a:hover {
     color: white;
     background-color: black;
 }
@@ -236,23 +236,118 @@
 }
 
 
-
-
-
-
-
-
-
-/* _______________________________________________ */
+/* 오늘의 작품 & 느낌 */
 .work {
+    /* 글자중앙정렬 tac */
     text-align: center;
+    /* 배경색 bgc */
     background-color: whitesmoke;
+    /* 마진 하단 mb */
     margin-bottom: -40px;
     
 }
 .work h3 {
+    /* 글자 중앙으로 주기 */
     padding: 0px;
 }
+/* 오늘의 작품 cite요소 */
+.work cite {
+    /* cite요소 기본 이탤릭 해제 fsn */
+    font-style: normal;
+    /* 글자 두껍게 fwb*/
+    font-weight: bold;
+    /* 글자체 ff */
+    font-family: 'Black And White Picture', sans-serif;
+    /* 글자크기 fz */
+    font-size: 20px;
+    /* 글자색 c */
+    color: darkred;
+}
+
+/* 메인 컨텐츠 아래 a요소
+주의사항 - 글자색, 밑줄은 반드시
+a요소에서 처리할것 */
+.main a {
+    /* 글자색 c */
+    color: black;
+    /* 글자데코 tdn 밑줄없애기 */
+    text-decoration: none;
+    /* 글자크기 fz */
+    font-size: 17px;
+    /* 글자체 ff */
+    font-family: 'Nanum Gothic', sans-serif;
+    /* 줄간격 lh */
+    line-height: 2.5;
+    /* 자간 ls */
+    letter-spacing: -1px;
+}
+/* a요소 마우스 오버시 */
+/* 가상클래스 :hover */
+.main a:hover {
+    /* 글자색 c */
+    color: coral;
+    /* 글자그림자 ts */
+    /* text-shadow: x축 y축 경계흐림 색; */
+    text-shadow: 1px 1px 1px #555;
+}
+
+/* ul, ol 블릿, 숫자, 타입변경 */
+.main ul {
+    /* 리스트 타입 lst */
+    list-style-type: square;
+    /* square 사각형, disc 원형, circle 빈원 등 */
+}
+.main ol {
+    list-style-type: upper-roman;
+    /* upper-roman 로마자 대문자 */
+    /* 순서를 표시하는 종류가 많다 */
+}
+
+/* li 순서별 글자색 변경하기 */
+.main ul li:first-child a {
+    color: red;
+}
+.main ul li:nth-child(2) a {
+    color: blue;
+}
+.main ul li:last-child a {
+    color: purple;
+}
+
+/* 분야별 뉴스 dt */
+.secnews dt {
+    font-family: 'Black And White Picture', sans-serif;
+    margin-top: 30px;
+    padding-left: 20px;
+    font-size: 22px;
+    text-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+}
+/* dt 순서별 글자색 변경 */
+.secnews dt:first-of-type {
+    color: lightsteelblue;
+}
+.secnews dt:nth-last-of-type(2) {
+    color: lightgreen;
+}
+.secnews dt:last-of-type {
+    color: lightcoral;
+}
+/* 
+    [ 자식요소 순번 선택하기 가상요소 ]
+    -> 태그가 한종류일때 (예: ul>li, ol>li)
+    :first-child 첫번째 자식요소
+    :nth-child(n) n째 자식요소 (n은 1부터)
+    :last-child 마지막 자식요소
+
+    -> 태그가 여러 종류일때 (dl>dt+dd)
+    :first-of-type 첫번째 자식요소
+    :nth-of-type(n) n번째 자식요소 (n은 1부터)
+    :last-of-type 마지막 자식요소
+*/
+
+
+
+
 
 
 
