@@ -165,19 +165,29 @@
     font-weight: normal;
     /* 글자크기 fz */
     font-size: 26px;
-    /* 패딩 왼쪽 */
+    /* 패딩 왼쪽 pl */
     padding-left: 20px;
 }
 
+
+
+
+
+
+
+
+
+
+
+/* _______________________________________________ */
 .work {
     text-align: center;
     background-color: whitesmoke;
     margin-bottom: -40px;
 }
-
-
-
-
+.work h3 {
+    padding: 0px;
+}
 
 
 
