@@ -141,6 +141,7 @@
     text-decoration: none;
     /* 보더 */
     border: 1px dashed lightblue;
+    letter-spacing: normal;
 }
 .main .org a:hover {
     color: white;
@@ -318,19 +319,25 @@ a요소에서 처리할것 */
 .secnews dt {
     font-family: 'Black And White Picture', sans-serif;
     margin-top: 30px;
-    padding-left: 20px;
+    padding: 5px;
     font-size: 22px;
     text-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+
+    /* 한줄에 오고 디자인은 block처럼 적용 */
+    display: inline-block;
+
+    border: 3px dotted darkcyan;
+    border-radius: 50%;
 }
 /* dt 순서별 글자색 변경 */
 .secnews dt:first-of-type {
-    color: lightsteelblue;
+    color: darkblue;
 }
 .secnews dt:nth-last-of-type(2) {
-    color: lightgreen;
+    color: darkgreen;
 }
 .secnews dt:last-of-type {
-    color: lightcoral;
+    color: darkgoldenrod;
 }
 /* 
     [ 자식요소 순번 선택하기 가상요소 ]
@@ -345,6 +352,56 @@ a요소에서 처리할것 */
     :last-of-type 마지막 자식요소
 */
 
+/* 사진뉴스 박스 */
+.pnews table {
+    /* margin: 0 auto - 블록요소, 테이블 중앙정렬 */
+    margin: 0 auto;
+}
+/* 첫번째 td - 숫자부분 */
+.pnews td:first-child {
+    width: 50px;
+    height: 70px;
+    background-color: #ccc;
+    text-align: center;
+}
+/* 두번째 td - 뉴스제목링크 */
+.pnews td:nth-child(2) {
+    /* width: 400px; */
+    /* height: 70px; */
+    background-color: rgba(204, 204, 204, 0.562);
+    padding-right: 116px;
+    padding-left: 20px;
+}
+/* 세번째 td - 사진 */
+.pnews img {
+    background-color: #ccc;
+    /* td에서 이미지 세로중앙 */
+    vertical-align: middle;
+    /* 
+        원래 vertical-align은
+        인라인요소간 세로정렬을
+        세팅하는 속성인데 테이블의
+        td에서 이 속성은 td의
+        세로정렬에 사용할 수 있다
+        여기서는 높이값이 지정되지
+        않은 상태에서 middle값을
+        주면 아래쪽 빈공간이 사라진다.
+    */
+}
+/* 사진뉴스 테이블 설정 */
+.pnews table {
+    /* 테이블 기본 간극 bdcoll */
+    border-collapse: separate;
+    /* 
+        값
+        collapse - 기본 간극이 없어진다
+        seperate - 간극 있음(기본값)
+    */
+    /* 사이간격 수치설정하기
+    - 주의-seperate상태에서만 설정
+    */
+    border-spacing: 7px;
+}
 
 
 
@@ -355,7 +412,26 @@ a요소에서 처리할것 */
 
 /* sub2.css */
 .apple_st {
+    display: block;
     text-decoration: underline;
-    margin: 144px;
+    text-align: center;
+}
 
+.bc {
+    border: 1px solid #777;
+    margin: 60px;
+    padding: 15px;
+    font-size: 13px;
+    color: #888;
+    word-spacing: -1px;
+}
+.bc ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.pnews .pp {
+    width: 190px;
+    height: 130px;
 }
