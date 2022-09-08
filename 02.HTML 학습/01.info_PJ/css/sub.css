@@ -103,12 +103,61 @@
     border-top: 2px solid gray;
     border-bottom: 2px solid #ccc;
 }
-
+/* i요소 변경 */
+.arti i {
+    /* 글자스타일 노멀 fsn */
+    font-style: normal;
+    /* 글자 두껍게 */
+    font-weight: bold;
+}
+/* q요소 변경 */
+.arti q {
+    /* 글자색 c */
+    color: darkgreen;
+    /* 글자 두껍게 fwb */
+    font-weight: bold;
+}
+/* del요소 변경 */
+.arti del {
+    /* 글자색 c */
+    color: lightpink;
+}
 
 /* 2-5. 기사정보 */
+.rinfo {
+    /* 패딩 p */
+    padding: 10px;
+    /* 폰트사이즈 fz */
+    font-size: 14px;
+}
+
 /* 2-6. 기사원문 */
+.org a {
+    padding: 10px;
+    font-size: 20px;
+    /* 글자색 c */
+    color: lightseagreen;
+    /* 글자밑줄없앰 tdn */
+    text-decoration: none;
+    /* 보더 */
+    border: 1px dashed lightblue;
+}
+.org a:hover {
+    color: white;
+    background-color: black;
+}
 
+/* 공통박스 article */
+.main article {
+    /* 보더 위 */
+    border-top: 2px dashed #ccc;
+    /* 마진 위 mt */
+    margin-top: 40px;
+    /* 패딩 p */
+    padding: 15px;
+}
 
+/* 공통 타이틀 h3 */
 
 
 
