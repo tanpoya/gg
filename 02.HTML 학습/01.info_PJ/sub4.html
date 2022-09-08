@@ -192,7 +192,7 @@
         </article>
 
         <!-- 분야별뉴스 (용어정의리스트 dl) -->
-        <article class="secnews"></article>
+        <article class="secnews">
         <h3>분야별뉴스</h3>
         <dl>
             <dt>경제</dt>
@@ -236,6 +236,50 @@
             </dd>
 
         </dl>
+    </article>
+
+        <!-- 사진뉴스 (테이블 table) -->
+        <article class="pnews">
+            <h3>사진뉴스</h3>
+            <!-- 테이블 구성 : 3행3열 -->
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040595" target="_blank">
+                            애플 에어팟 프로 2세대, <br>
+                            공사장 옆도 편하게 지날 수 있다</a>
+                    </td>
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040595" target="_blank"><img src="./images/pn1.jpg" alt="에어팟"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040589" target="_blank">
+                            'M자' 벗고 위성통신 탑재, <br>
+                            新 프로까지 확 달라진 아이폰14</a>
+                    </td>
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040589" target="_blank"><img src="./images/pn2.jpg" alt="아이폰14"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040594" target="_blank">
+                            소니, 블리자드 인수 후 <br>
+                            ‘콜 오브 듀티’ 제공한다는 MS에 불만 표출
+                        </a>
+                    </td>
+                    <td>
+                        <a href="https://n.news.naver.com/mnews/article/293/0000040594" target="_blank"><img src="./images/pn3.png" alt="소닉블자"></a>
+                    </td>
+                </tr>
+            </table>
+
+        </article>
 
     </main>
 
@@ -343,6 +387,21 @@
         ______________________________
 
         주의사항 - dl은 반드시 자식요소로 dt, dd를 한번이상 사용해야함
+
+    4. table 테이블
+    table tr td
+    table > tbody > tr > td
+
+    table : 테이블 박스 부모요소
+    tr : 테이블 행요소(table row)
+    td : 테이블 데이터(table data)
+    참고) table tr td 로만 코딩구성한 경우
+    브라우저 분석기로 보면 table>tbody 가 있다
+    이는 테이블 본문파트를 나타낸다
+    안싸줘도 기본코딩으로 자동추가됨
+    (원래 테이블은 thead, tbody, tfoot 세부분으로 구성됨)
+
+
 -->
 
 </body>
