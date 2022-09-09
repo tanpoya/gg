@@ -410,7 +410,6 @@ a요소에서 처리할것 */
 
 /* _______________________________________________ */
 
-/* sub2.css */
 .apple_st {
     display: block;
     text-decoration: underline;
@@ -435,3 +434,22 @@ a요소에서 처리할것 */
     width: 190px;
     height: 130px;
 }
+
+
+.arti_t {
+    margin: 0 20px;
+    line-height: 25px;
+    word-spacing: -1px;
+    letter-spacing: -1px;
+}
+.afig .bus_img {
+    width: 647px;
+}
+.arti_3 {
+    padding: 0 20px;
+    border-bottom: 2px dashed #ccc;
+}
+
+
+/* 글자자간 ls */
+/* 단어간격 ws-1 */
