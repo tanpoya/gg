@@ -459,3 +459,25 @@ a요소에서 처리할것 */
     display: block;
     padding: 0 380px 10px 0; /* 상 우 하 좌 */
 }
+.tvp {
+    width: 200px;
+    
+}
+
+.desc_5 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+.desc_5s {
+    font-size: 14px;
+    padding: 0 30px;
+    font-weight: normal;
+    font-family: "굴림";
+}
+.Yu_mc {
+    width: 300px;
+}
+.work .Yu {
+    color: rgb(17, 195, 240);
+}
