@@ -124,6 +124,7 @@
             margin-right: 10px;
             vertical-align: 2px;
         }
+        
 
         /* dd전체와 
         dd.story>h3에 가상요소 before적용하기 */
@@ -154,17 +155,26 @@
             content: '👻';
         }
 
+
         /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
         dd.story p:first-of-type::first-letter {
             font-size: 50px;
-            color: hotpink;
+            color: white;
             font-weight: bold;
+        }
+        dd.story p:hover:first-of-type::first-letter {
+            color: red;
+            background-color: black;
+            font-family: "궁서";
         }
 
 
         /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
         dd.story p:first-of-type::first-line {
             color: blue;
+        }
+        dd.story p:hover:first-of-type::first-line {
+            color: red;
         }
 
 
@@ -189,6 +199,15 @@
         /* ::selection만 쓰면 전체가 다 적용됨
         특정선택자::selection 으로  쓰면 자식 태그로
         싸지 않은 글자만 적용됨 */
+
+        /* dl dd:nth-of-type(-n+6) {
+            display: none;
+        } */
+
+        body {
+            background: url(./imgs/bg_logo_a_01.png) no-repeat right top/10%;
+            background-attachment: fixed;
+        }
 
     </style>
 </head>
