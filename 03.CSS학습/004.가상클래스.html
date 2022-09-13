@@ -259,7 +259,12 @@
         
 
         /* 마지막 li - 40px "맑은 고딕" coral */
-        
+        /* ul.part1 li:last-child { */
+        body .part1 li:last-child {
+            font-size: 40px;
+            font-family: "맑은 고딕";
+            color: coral;
+        }
 
         /*      
             틸드(~)를 사용한 CSS가 한단계 더 선택하여서
@@ -268,8 +273,11 @@
             써준면 된다~!!!
             -> 여기서 한단계 위의 부모는 body!
             (호가호위! 여우 뒤에 호랑이!)
-        */
 
+            -> 참고) 기존선택자 . part 보다 ul.part로 쓰면
+            종속선택자가 한단계 선택을 더했으므로 우선순위를 높임
+        */
+        
 
         /* 두번째 파트 */
         div.part2 {
@@ -287,15 +295,31 @@
         }
 
         /* 두번째 div - 30px 궁서 blueviolet */
-        
+        .part2 div:nth-of-type(2) {
+            font-size: 30px;
+            font-family: "궁서";
+            color: blueviolet;
+        }
 
 
         /* 첫번째 i - 20px bold palevioletred */
-        
+        .part2 i:first-of-type {
+            font-size: 20px;
+            font-weight: bold;
+            color: palevioletred;
+        }
 
 
         /* 3번째 div 이후 div형제요소 모두 */
-        
+        /* .part2 div:nth-of-type(3) ~ div {} */
+
+        /* 3번째 div 이후 i형제요소 모두 */
+        /* .part2 div:nth-of-type(3) ~ i {} */
+        /* 3번째 div 이후 모든형제요소 */
+        .part2 div:nth-of-type(3) ~ * {
+            color: red;
+            font-family: "궁서";
+        }
 
 
 
