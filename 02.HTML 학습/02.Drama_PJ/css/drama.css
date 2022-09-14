@@ -97,7 +97,7 @@ html, body {
     color: red;
     font-weight: bold;
     text-decoration: underline;
-    text-decoration-style: wavy;
+    text-decoration-style: double;
 }
 
 #drama tfoot a {
@@ -126,6 +126,7 @@ table#gubun {
     border: 1px solid #999;
     /* 오른쪽 끝으로 보내기 */
     float: right;
+    /* margin: 0 auto; */
 }
 /* 구분테이블 td */
 #gubun td {
