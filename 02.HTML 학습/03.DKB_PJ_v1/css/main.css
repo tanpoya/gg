@@ -8,9 +8,9 @@
 @import url(common.css);
 
 /* 공사중 표시 */
-body * {
+/* body * {
     outline: 2px dashed gray;
-}
+} */
 
 /* 컨텐츠 파트 최상위부모 */
 body {
@@ -36,6 +36,7 @@ body {
     설정된 크기를 유지하다가 내용이
     많아지면 늘어난다 (많이사용됨) */
     /* 넘치는 자식요소 숨기기 */
+
     overflow: hidden;
     /* 이거 왜했지? 첫번째 자식요소 마진탑값이
     부모요소 바깥으로 미는 기본 특성이 있으므로
@@ -171,7 +172,9 @@ body {
     /* 양쪽정렬 justify */
     text-align: justify;
 }
-
+.cd p b {
+    color: red;
+}
 /* 
 'Song Myung'
 'Ma Shan Zheng'
