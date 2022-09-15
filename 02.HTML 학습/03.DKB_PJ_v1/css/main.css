@@ -43,7 +43,7 @@ body {
     /* 가로크기 w */
     width: 90%;
     margin: 0 auto;
-    margin-top: 500px;
+    margin-top: 400px;
 }
 /* 자식요소의 float해제 설정 가상요소 after로 */
 .cbx::after {
@@ -66,7 +66,49 @@ body {
 
 }
 /* 캐릭터 이미지 */
-.cat img {
+/* - .ci의 직계자식 img만 선택 */
+.ci > img {
     width: 100%
+}
 
+/* 캐릭터 이름박스 */
+.ci figcaption {
+    /* 글자중앙 tac 
+        text-align 속성은 글자뿐 아니라
+        인라인요소는 모두 적용된다.
+        단, 크기를 가지는 블록형박스만됨*/
+    text-align: center;
+
+    /* 이미지를 위로 올려 겹치게 하려면
+    포지션을 안쓰고 마진을 마이너스로 준다 */
+    margin-top: -20%;
+    /* %의 기준은? 원래박스 크기의 높이값 */
+}
+
+/* 캐릭터 이름이미지 공통 */
+.ci figcaption img {
+    /* 가로크기 w */
+    width: 47%;
+    /* 항상 값이 % 단위일 경우 질문한다
+    기준이 머지
+    -> 여기서는 싸고 있는
+    figcaption 박스 가로크기가 기준 */
+}
+
+/* 캐릭터 이름이미지
+첫번째이미지(진한이미지) 숨기기  */
+.ci figcaption img:first-child {
+    display: none;
+}
+/* 캐릭터박스 .cat에 오버시 */
+/* 마우스 오버시 처리1
+첫번째이미지 보이기 */
+.cat:hover .ci figcaption img:first-child {
+    display: inline;
+}
+
+/* 마우스 오버시 처리2
+마지막이미지 숨기기 */
+.cat:hover .ci figcaption img:last-child {
+    display: none;
 }
