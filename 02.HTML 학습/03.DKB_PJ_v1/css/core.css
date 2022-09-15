@@ -2,14 +2,18 @@
 /* 도깨비 PJ 공통클래스/웹폰트 CSS - core.css */
 
 /* 웹폰트 CDN */
-@import url('https://fonts.googleapis.com/css2?family=Single+Day&family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+KR&family=Noto+Serif+SC&family=Song+Myung&display=swap');
 /* 
-    font-family: 'Single Day', cursive;
-    font-family: 'Yeon Sung', cursive;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    1. 캐릭터 설명 제목체
+    font-family: 'Song Myung', serif;
+    2. 캐릭터 설명 내용채
+    font-family: 'Ma Shan Zheng', cursive;
+    3. 캐릭터 설명 한자체
+    font-family: 'Noto Serif KR', serif;
+    font-family: 'Noto Serif SC', serif;
+    4. 전체 공통체
     font-family: 'Nanum Gothic', sans-serif;
 */
-
 /* 전체 웹폰트 일반적용 */
 body {
     font-family: 'Nanum Gothic', sans-serif;
