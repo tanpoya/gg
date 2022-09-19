@@ -2,9 +2,9 @@
 /* 로봇 PJ CSS - robot.css */
 
 /* 공사중 표시 */
-body * {
+/* body * {
     outline: 2px dashed lime;
-}
+} */
 
 /* 초기화 */
 html, body, h1, h2, h3, ul, ol {
@@ -48,7 +48,7 @@ body {
     margin: 0 auto;
 
     /* 둥근모서리 : 왼위 오른위 오른아래 왼아래 (시계방향) */
-    border-radius: 50px 50px 0 0;
+    border-radius: 70px 70px 100px 100px;
 
 }
 
@@ -119,12 +119,12 @@ body {
 /* 왼쪽귀 */
 .er1 {
     left: -60px;
-    border-radius: 50px 0 0 50px;
+    border-radius: 130px 0 30px 100px;
 }
 /* 오른쪽귀 */
 .er2 {
     right: -60px;
-    border-radius: 0 50px 50px 0;
+    border-radius: 0 130px 100px 30px;
 
 }
 
@@ -140,6 +140,18 @@ body {
     /* 마진상단 */
     margin-top: 50px;
 }
+/* 가상요소로 몸박스 하단처리 */
+.body::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    /* 선형 그라데이션 */
+    background-image: linear-gradient(skyblue 50%, white);
+}
 
 /* 목 */
 .neck {
@@ -148,6 +160,7 @@ body {
     height: 50px;
     left: 95px;
     top: -50px;
+    border-radius: 5px;
 }
 
 /* 팔 공통 */
@@ -180,7 +193,7 @@ body {
     /* 원형 그라데이션 */
     /* radial-gradient(red, orange, yellow); */
     /* radial-gradient(circle, red, orange, yellow); */
-    radial-gradient(farthest-side at 40% 40%, white, black);
+    radial-gradient(farthest-side at 40% 40%, black, red);
 }
 
 /* 왼쪽가상요소 위치 */
@@ -228,6 +241,13 @@ body {
     height: 40px;
     background-color: #000;
     border-radius: 0 0 7px 7px;
+    /* 클리핑 기법을 사용하여 그림자를 삼각형으로 만들기
+    다각형 클리핑
+    clip-path: polygon(x1 y1, x2 y2, ...
+    -> 소괄호를 비울 수 없다
+    -> 각 좌표는 x, y좌표 하나는 띄어쓰기로
+    다른좌표는 콤마로 구분한다 */
+    clip-path: polygon(0% 100%, 50% 0, 100% 100%);
 }
 /* 왼손 그림자 위치 */
 .arm.a1::after {
@@ -260,6 +280,22 @@ body {
     background-size: 100%;
     background-repeat: repeat-y;
 }
+.leg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    left: -6px;
+    width: 80px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 30% 30% 0 0;
+    border: 1px solid #222;
+    border-bottom: 20px solid #000;
+    /* 원형 그라데이션 */
+    background-image: radial-gradient(farthest-side at 20px 10px, white, #333);
+}
+
 /* 왼다리 */
 .l1 {
     left: 0%;
@@ -280,10 +316,43 @@ body {
 /* 왼어깨 */
 .s1 {
     left: -80px;
-    border-radius: 50% 5px 0 50%;
+    border-radius: 50% 50px 0 50%;
 }
 /* 오른어깨 */
 .s2 {
     right: -80px;
-    border-radius: 5px 50% 50% 0;
+    border-radius: 50px 50% 50% 0;
+}
+
+.tv {
+    position: absolute;
+    left: 21px;
+    top: 50px;
+    width: 200px;
+    height: 150px;
+    background: url(../images/tv.jpg) no-repeat 0/100%;
+    border: 5px ridge #333;
+    border-radius: 10px;
+}
+/* 스크린 */
+.screen {
+    position: absolute;
+    top: 19px;
+    left: 18px;
+    /* 부모는 .tv */
+    width: 128px;
+    height: 100px;
+    background-color: #f00;
+    border-radius: 10px;
+    /* 넘치는 자식요소 숨기기 */
+    overflow: hidden;
+}
+/* iframe */
+.screen iframe {
+    position: absolute;
+    top: -23px;
+    left: -37px;
+    width: 142%;
+    height: 164%;
+    border: none;
 }
