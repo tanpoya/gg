@@ -500,3 +500,11 @@ body {
     /* 배경색 검정반투명 */
     background-color: rgba(0, 0, 0, 0.288);
 }
+
+.dcbx .my {
+    display: block;
+}
+.dcbx .my::first-letter {
+    font-size: 30px;
+    color: red;
+}
