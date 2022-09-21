@@ -90,12 +90,27 @@
             1. rotateY(각도deg) - Y축회전
             - deg는 각도의 단위(도:degree)
          */
-        
+        #trans1:hover img {
+            /* 트랜스폼 tf */
+            transform: rotateY(180deg);
+            /* 필터 grayscale(값%) - 흑백효과 */
+            filter: grayscale(100%);
+        }
 
         /* 
             2. rotateX(각도deg) - X축회전
          */
-        
+        #trans2 img {
+            /* 트랜스폼 tfrx */
+            transform: rotateX(180deg);
+            /* 흐림효과 */
+            filter: blur(2px);
+        }
+        #trans2:hover img {
+            /* 트랜스폼 */
+            transform: rotateX(0deg);
+            filter: blur(0px);
+        }
 
         /* 
             [ CSS 필터속성 ]
@@ -114,6 +129,10 @@
             - % 단위를 쓸 경우 기준은 요소의 width
             - 이동방향: + 는 오른쪽, - 는 왼쪽
           */
+        #trans3:hover img {
+            /* 트랜스폼 */
+            transform: translateX(-50%);
+        }
         
 
         /* 
@@ -124,7 +143,10 @@
             - % 단위를 쓸 경우 기준은 요소의 height
             - 이동방향: + 는 아랫쪽, - 는 윗쪽
           */
-        
+        #trans4:hover img {
+            transform: translateY(140%);
+        }
+
 
         /* 
             5. translate(X축거리,Y축거리) - X,Y축이동
@@ -136,6 +158,9 @@
             - 이동방향: + 는 오른쪽/아랫쪽, 
                         - 는 왼쪽/윗쪽
           */
+        #trans5:hover img {
+            transform: translate(-50%, -50%);
+        }
         
 
         /* 
@@ -145,9 +170,25 @@
             - 기본회전축은 정중앙
                 (변경가능: transform-origin)
            */
-        
+        #trans6:hover img {
+            /* 트랜스폼 tfr */
+            transform: rotate(5470deg);
+            /* 트랜지션 시간늘림 */
+            transition-duration: 10s
+        }
+
 
         /* 회전축 변경하기 */
+        #trans6 img {
+            transform-origin: 100px 20px;
+            /* 
+                [ 트랜스폼 축변경 속성 ]
+                transform-origin: 가로 세로;
+                - 가로값: left right center px,%
+                - 세로값: top bottom center px,%
+                - 기본값: 가로, 세로 center임
+            */
+        }
         
 
         /* 
@@ -156,6 +197,9 @@
             - skew(x축, y축)
             - 각도가 양수/음수에 따라 기울임 방향달라짐                
         */
+        #trans7:hover img {
+            transform: skew(30deg, 5deg);
+        }
         
 
         /* 
@@ -165,12 +209,28 @@
             - scaleX(배수), scaleY(배수) - x,y축별
             - 값이 0이면 사라짐
         */
+        #trans8:hover img {
+            transform: scale(1.5);
+        }
+        #trans8 img {
+            transform: scale(0);
+        }
         
 
         /* 
             9. 복합적용하기
             transform: 속성1 속성2 속성3 .....;
         */
+        #trans9:hover img {
+            /* 다중 트랜스폼 tf */
+            transform: scale(1.5)
+            translate(-200%, -100%)
+            rotateX(1200deg)
+            skewX(50deg)
+            rotate(5300deg);
+            /* 트랜지션 시간늘림 trsd */
+            transition-duration: 20s;
+        }
         
 
         /* 
@@ -181,26 +241,56 @@
             - 순서는 나중에 그려진요소가 위에 온다
         */
         /* 2개의 이미지를 겹치게한다 */
-        
+        #trans10 img {
+            position: absolute;
+            /* 젠틀앱솔루트는 부모박스에
+            그대로 위치함(뷰모자격 불필요) */
+            width: 200px;
+            /* 기존 100%로 공통설정이 되어 있기 때문에
+            %의 기준으로 부모를 찾는다! 따라서 그냥 px로 셋팅 */
+        }
 
 
         /* 1. 보거미 처음상태(돌아옴) */
         /* Y축 0도로 돌아옴 - 0.4초 기다림 */
+        #trans10 img:last-child {
+             /* 트랜지션 trs */
+             transition: transform .4s .4s;
+            /* 돌아올때 0.4초 후 돈다 */
+        }
+
         
-
-
         /* 2. 보거미 오버상태 */
         /* Y축 90도회전 - 회전후 안보임*/
+        #trans10:hover img:last-child {
+            /* 트랜스폼 tfry */
+            transform: rotateY(90deg);
+            /* 트랜지션 trs */
+            transition: transform .4s;
+        }        
         
 
         /* 3. 유정이 처음상태(돌아옴) */
         /* 처음에 이미 Y축 90도 회전상태 - 안보임 */
+        #trans10 img:first-child {
+            /* 트랜스폼 tfry */
+            transform: rotateY(90deg);
+            /* 트랜지션 trs */
+            transition: transform .4s;
+            /* 돌아갈때는 기다림없이 바로 회전 */
+        }
         
-
-
+        
         /* 4. 유정이 오버상태 */
         /* Y축 0도로 회전 
         - 보거미 0.4초 돌동안 기다렸가 0.4초돌기 */
+        #trans10:hover img:first-child {
+            /* 트랜스폼 tfry */
+            transform: rotateY(0deg);
+            /* 트랜지션 trs */
+            transition: transform .4s .4s;
+            /* 0.4초 후 돈다 */
+        }
         
 
 
