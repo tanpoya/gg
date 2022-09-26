@@ -164,7 +164,7 @@
     /* 글자셋팅 */
     color: #222;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 2.8;
 }
 /* 마우스 오버시 a */
@@ -181,7 +181,7 @@
 }
 .addr address{
     /* 글자셋팅 - address요소 기본 이탤릭해제 */
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal;
     text-align: center;
     line-height: 2;
@@ -210,7 +210,7 @@
     /* 글자셋팅 */
     color: #222;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     /* line-height: 2.8; */
     padding: 5px;
     border-radius: 4px;

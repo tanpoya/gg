@@ -180,12 +180,12 @@ body {
 .cd h3 {
     /* 글자체 ff */
     font-family: 'Song Myung';
-    /* 글자크기 fz */
-    font-size: 24px;
+    /* 글자크기 fz - min() 최대글자크기 지정 */
+    font-size: min(2vw, 28px);
     /* 글자두께 fw */
     font-weight: normal;
     /* 패딩 : 위 15px 양쪽 10px 아래 5px */
-    padding: 15px 10px 5px;
+    padding: 15px min(1vw, 10px) 5px;
     /* 자건 ls */
     letter-spacing: 1px;
     text-align: center;
@@ -195,11 +195,11 @@ body {
     /* 글자체 */
     font-family: 'Noto Serif KR', 'Noto Serif SC', 'Ma Shan Zheng';
     /* 글자크기 */
-    font-size: 18px;
+    font-size: min(1.3vw, 18px);
     /* 줄간격 lh */
     line-height: 1.4;
     /* 패딩 p */
-    padding: 10px;
+    padding: min(2vw, 10px);
     letter-spacing: 2px;
     /* 양쪽정렬 justify */
     text-align: justify;
