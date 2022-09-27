@@ -204,6 +204,20 @@ height: 120px;
     height: 100%;
 }
 
+/* 모바일용 햄버거버튼 */
+.ham {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 50px;
+    font-size: 40px;
+}
+/* 버튼 가상요소로 기호넣기 */
+.ham::before {
+    content: '≡';
+    transform: scaleX(1.5);
+}
+
 
 /************** 3. 하단영역 **************/
 /* 겉박스 */
