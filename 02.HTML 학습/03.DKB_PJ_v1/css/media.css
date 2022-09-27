@@ -35,7 +35,7 @@
     }
     /* 캐릭터 부모박스 */
     .cbx {
-        margin-top: 50px;
+        margin-top: 100px;
     }
     /* 캐릭터 오버시 이미지박스 */
     .cat:hover .ci {
@@ -62,6 +62,11 @@
     /* 없어질 요소들 : 상단메뉴, GNB, 하단링크 */
     .tmenu, .gnb, .blink {
         display: none;
+    }
+
+    /* 보여질 요소 */
+    .ham {
+        display: block;
     }
 
     /* 상단영역 높이값 */
@@ -97,4 +102,5 @@
         height: auto;
         padding-bottom: 20px;
     }
+
 } /* 870px이하 */

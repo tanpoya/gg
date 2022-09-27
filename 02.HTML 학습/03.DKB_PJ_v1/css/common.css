@@ -207,15 +207,26 @@ height: 120px;
 /* 모바일용 햄버거버튼 */
 .ham {
     position: absolute;
-    top: 50px;
+    top: 35px;
     right: 20px;
     width: 50px;
     font-size: 40px;
+    background-color: transparent;
+    border: none;
+
+    /* 처음에 안보임 */
+    display: none;
 }
 /* 버튼 가상요소로 기호넣기 */
 .ham::before {
     content: '≡';
     transform: scaleX(1.5);
+    /* 트랜스폼은 인라인에 안먹힘 */
+    display: block;
+}
+.ham.on::before {
+    content: '×';
+    transform: none;
 }
 
 
@@ -278,7 +289,7 @@ height: 120px;
     line-height: 2;
 
     /* 박스셋팅 */
-    width: 845px;
+    max-width: 845px;
     margin: 0 auto;
     padding: 10px;
     border: 4px double #222;
@@ -306,3 +317,5 @@ height: 120px;
     padding: 5px;
     border-radius: 4px;
 }
+
+/* li:hover */
