@@ -10,7 +10,6 @@
     background-color: #fff;
     /* 하단구분선 */
     border-bottom: 1px solid #ccc;
-    /* 넘치는 자식요소 숨기기의 역할은 */
     overflow: hidden;
     /* 보통의 static박스의 자식요소가 바깥으로
     나가서 하위박스에 영향을 미칠경우
