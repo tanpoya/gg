@@ -1,6 +1,6 @@
 @charset "utf-8";
-/* 도깨비 PJ  서브 페이지 CSS - temp.css */
-/* 서브 페이지에만 적용되는 CSS */
+/* 도깨비 PJ 로그인 페이지 CSS - login.css */
+/* 로그인 페이지에만 적용되는 CSS */
 
 /* 외부 CSS합치기 */
 @import url(reset.css);
