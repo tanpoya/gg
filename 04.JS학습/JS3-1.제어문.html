@@ -40,31 +40,31 @@
                 * 기능: 숫자가 아니거나 범위밖 숫자일때
                         셋팅될만한 요소를 초기화해줌 
             ****************************************************/
-           // 변수에 익명함수 function(){} 를 할당함
-           // 변수에 할당한 함수일 경우 바로 호출하려면
-           // 할당된 함수가 호출코드 보다 위에 있어야함
-            var initFn = function() {
+            // 변수에 익명함수 function(){} 를 할당함
+            // 변수에 할당한 함수일 경우 바로 호출하려면
+            // 할당된 함수가 호출코드 보다 위에 있어야함
+            var initFn = function () {
 
-            // 2. 데이터 초기화
-            // (1) 글자색 초기화
-            jexp.style.color = "#000";
+                // 2. 데이터 초기화
+                // (1) 글자색 초기화
+                jexp.style.color = "#000";
 
-            // (2) 칭찬스티커 초기화
-            jshow.style.backgroundPosition = "322px 0";
+                // (2) 칭찬스티커 초기화
+                jshow.style.backgroundPosition = "322px 0";
 
-            // (3) 입력창에 내용 지우기
-            jumsu.value = ""; // 빈 문자값을 넣으면 지워짐
+                // (3) 입력창에 내용 지우기
+                jumsu.value = ""; // 빈 문자값을 넣으면 지워짐
 
-            // (4) 입력창에 포커스주기(버튼클릭시)
-            jumsu.focus();
-            // focus() JS 내장함수는 입력창에 커서가 감
+                // (4) 입력창에 포커스주기(버튼클릭시)
+                jumsu.focus();
+                // focus() JS 내장함수는 입력창에 커서가 감
 
-            // 아래쪽 코드가 빠져나가지 못하게함
-            // if안에서 함수를 빠져나가는 명령을 함
-            return;
-            // return키워드는 함수를 빠져나갈때 사용
-            // return 전달값
-            // -> 함수를 호출한 곳으로 값 전달 가능
+                // 아래쪽 코드가 빠져나가지 못하게함
+                // if안에서 함수를 빠져나가는 명령을 함
+                return;
+                // return키워드는 함수를 빠져나갈때 사용
+                // return 전달값
+                // -> 함수를 호출한 곳으로 값 전달 가능
 
             }; ///////////////// initFn 함수 ////////////////////
 
@@ -75,30 +75,30 @@
                 ->is Not a Number? -> true
                     (숫자가 아니니?) -> ㅇㅇ
             **********************************************/
-        //    alert(`Nb? ${isNaN(score)}`, isNaN(score));
+            //    alert(`Nb? ${isNaN(score)}`, isNaN(score));
 
-           // 숫자여부판별 if문
-           if(isNaN(score)) {
+            // 숫자여부판별 if문
+            if (isNaN(score)) {
                 // 1. 숫자가 아닐경우 메시지 출력
                 jexp.innerText = "숫자를 입력하세요";
-            
+
                 // 초기화
                 initFn();
                 return;
-        } else if(score < 0 || score > 100) {
-            /**************************************** 
-                [ 숫자범위 판별하기 ]
-                조건: 0미만 이거나 100초과인 경우
-            *****************************************/
-           // 1. 범위 바깥일 경우 메시지 출력
-           jexp.innerText = "0이상 100이하의 숫자만 입력하세요";
+            } else if (score < 0 || score > 100) {
+                /**************************************** 
+                    [ 숫자범위 판별하기 ]
+                    조건: 0미만 이거나 100초과인 경우
+                *****************************************/
+                // 1. 범위 바깥일 경우 메시지 출력
+                jexp.innerText = "0이상 100이하의 숫자만 입력하세요";
 
-            // 2. 초기화
-            initFn();
+                // 2. 초기화
+                initFn();
 
-            // 3. 리턴 - 함수나가기
-            return;
-        }
+                // 3. 리턴 - 함수나가기
+                return;
+            }
 
 
 
@@ -111,19 +111,19 @@
 
 
             // 4. 점수환산하기
-            if(score >= 90) {
+            if (score >= 90) {
                 msg = "매우잘함";
                 jc = "blue";
                 bgp = "0 0";
-            } else if(score >= 80) {
+            } else if (score >= 80) {
                 msg = "잘함";
                 jc = "green";
                 bgp = "-322px -0"
-            } else if(score >= 70) {
+            } else if (score >= 70) {
                 msg = "보통";
                 jc = "purple";
                 bgp = "-322px -322px"
-            } else if(score >= 60) {
+            } else if (score >= 60) {
                 msg = "노력요함";
                 jc = "orange";
                 bgp = "0 -644px"
@@ -146,7 +146,7 @@
             jshow.style.backgroundPosition = bgp;
 
 
-            
+
 
 
         } /////////////// jumsu 함수 ///////////////
@@ -229,18 +229,25 @@
             // 호출할 수 없음
 
             // 지역명을 switch case문으로 분류하여 메시지넣기
-            switch(txt) {
-                case "서울": msg = "02"; break;
-                case "경기": msg = "031"; break;
-                case "인천": msg = "032"; break;
-                default: msg = "esc";
+            switch (txt) {
+                case "서울":
+                    msg = "02";
+                    break;
+                case "경기":
+                    msg = "031";
+                    break;
+                case "인천":
+                    msg = "032";
+                    break;
+                default:
+                    msg = "esc";
             } ////////switch case ////////
 
             console.log("메시지: ", msg);
 
             // 4. 메시지 만들기
             // msg 변수에 최종 출력내용을 다시 담아서 변경함
-            if(msg === "esc") msg = "등록되지 않은 지역입니다";
+            if (msg === "esc") msg = "등록되지 않은 지역입니다";
             else msg = `${txt}의 지역번호는 ${msg}입니다`;
             // if문의 실행문이 1개이면 중괄호 생략가능
 
@@ -248,9 +255,9 @@
             // 출력대상: #info -> info변수
             info.innerText = msg;
 
-        }/////////////// local함수 ///////////////
+        } /////////////// local함수 ///////////////
         /////////////////////////////////////////
-        
+
 
         /************************************************ 
            [ switch case 문 ]
@@ -289,11 +296,40 @@
               함수명: gugu
               기능: 선택박스에서 선택된 구구단을 출력함(for문사용!)
               연결이벤트: change
-                      -> 선택박스(select)의 option선택이
+                      ->수선택박스(select)의 option선택이
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
-        
+        function gugu(U) {
+            // U - 전달변수(함수호출시 보내는 값을 받는 함수내에서만 사용되는 지역변수)
+
+            // 0. 전달값의 선택option 값 읽기
+            var optval = U.value;
+
+            // 1. 호출확인
+            console.log("구구단을 외자", optval);
+
+            // 2. 대상선정 : 출력다생 -> .g1
+            var tg = document.querySelector(".g1");
+
+            // 3. 구구단 만들기 : code변수에 모두 넣기
+            var code = `<h2>${optval}단</h2>`;
+
+            // 앞의 데이터를 살리기위해 +=(대입연산자)사용
+            // for(시작값;한계값;증가){실행코드}
+            for(var i=1; i<=1000000; i++) {
+                code += `${optval} × ${i} ＝ ${optval*i} <br>`;
+            } // for //
+            
+
+            // 4. 화면출력 : html코드를 innerHTML로 출력
+            // 주의: innerText로 출력하면 태그가 그대로 보임
+            tg.innerHTML = code;
+
+
+        }
+
+
         /*************************************************** 
                [ for문 ]
 
@@ -330,7 +366,7 @@
                       변경될때 발생하는 이벤트
                       -> onchange 이벤트속성을 사용함!
           *************************************************/
-        
+
 
         /**************************************************** 
               [ while문 ]
@@ -449,7 +485,8 @@
     <h2>switch case문 연습</h2>
     <h3 id="info">국번안내</h3>
     <label for="local">지역명 입력:</label>
-    <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요!" maxlength="10" onkeypress="if(event.keyCode===13)local()"/>
+    <input type="text" id="local" placeholder="지역명을 '도'를 빼고 쓰세요!" maxlength="10"
+        onkeypress="if(event.keyCode===13)local()" />
     <button class="sbtn" onclick="local()">국번문의</button>
 
     <br /><br />
@@ -457,8 +494,28 @@
     <!-- for문 연습 -->
     <h2>for문 연습</h2>
     <h3>구구단 출력하기</h3>
-    <select name="sel" id="sel">
+    <select name="sel" id="sel" onchange="gugu(this)">
+
+        <!-- 
+            [ this 키워드 ] ********주의: 따옴표로 싸지말것********
+            -> 이벤트가 발생하는 요소 자신을 말함
+            -> 받는 곳에서 요소 내부의 속성에 접근가능함
+
+
+
+
+
+            option[value=$]{$단}*20
+
+            [젠코딩(에밋코딩)]
+            요소명[속성명=값]{데이터값}
+            $ 기호는 다중생성시 연속번호자리
+            *숫자 -> 생성개수(*곱하기)
+
+        -->
         <!-- option[value=$]{$단}*20 -->
+
+
         <option value="1">구구단을 선택하세요!</option>
         <option value="2">2단</option>
         <option value="3">3단</option>
