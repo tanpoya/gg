@@ -154,7 +154,7 @@ body *{
     transition: top .3s cubic-bezier(0.88,-0.02, 0.56, 0.2);
 }
 .movtxt_1 {
-    /* line-height: 1.5; */
+    line-height: 1.5;
 }
 /* 상위 li에 마우스 오버시 영화정보 올라오기 */
 .mlist ul>li:hover .movtxt {
@@ -174,6 +174,8 @@ body *{
     /* 플렉스박스 - 하위직계div만 옆으로 흐름 */
     display: flex;
     height: 100px;
+    /* 진행방향의 수작정렬 */
+    align-items: center;
 }
 
 /* 3-1. 하단로고 */
