@@ -154,7 +154,7 @@ body *{
     transition: top .3s cubic-bezier(0.88,-0.02, 0.56, 0.2);
 }
 .movtxt_1 {
-    line-height: 1.5;
+    /* line-height: 1.5; */
 }
 /* 상위 li에 마우스 오버시 영화정보 올라오기 */
 .mlist ul>li:hover .movtxt {
