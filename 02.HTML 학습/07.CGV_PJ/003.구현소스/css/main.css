@@ -193,7 +193,8 @@ body *{
 
 /* 3-3. SNS박스 */
 .info>div:last-child {
-
+    /* 마지막 div만 오른쪽 끝으로 이동 */
+    margin-left: auto;
 }
 .sns {
     /* 플렉스박스 - 하위 li 옆으로 흐르게 */
