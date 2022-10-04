@@ -309,7 +309,7 @@
             // 1. 호출확인
             console.log("구구단을 외자", optval);
 
-            // 2. 대상선정 : 출력다생 -> .g1
+            // 2. 대상선정 : 출력대상 -> .g1
             var tg = document.querySelector(".g1");
 
             // 3. 구구단 만들기 : code변수에 모두 넣기
@@ -375,17 +375,29 @@
             // 1. 호출확인
             console.log("구구단을 외자", optval);
 
-            // 2. 대상선정 : 출력다생 -> .g1
-            var tg = document.querySelector(".g1");
+            // 2. 대상선정 : 출력대상 -> .g2
+            var tg = document.querySelector(".g2");
 
             // 3. 구구단 만들기 : code변수에 모두 넣기
             var code = `<h2>${optval}단</h2>`;
 
             // 앞의 데이터를 살리기위해 +=(대입연산자)사용
-            // for(시작값;한계값;증가){실행코드}
-            for(var i=1; i<=10; i++) {
+            /* 
+                시작값;
+                while(한계값){
+                    실행코드;
+                    증감;
+                }
+            */
+            
+            // 시작값
+            var i = 1;
+            while(i <= 9) { // 소괄호 안이 한계값;
+                // 실행코드
                 code += `${optval} × ${i} ＝ ${optval*i} <br>`;
-            } // for //
+                //증감
+                i ++
+            } // while //
             
 
             // 4. 화면출력 : html코드를 innerHTML로 출력
