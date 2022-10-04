@@ -5,7 +5,8 @@ window.addEventListener("DOMContentLoaded", function() {
     console.log("로딩완료");
 
     // 클릭이벤트 대상: .btns button
-    const btns = this.document.querySelector(".btns button");
+    const btns = this.document.querySelector(".btns button.a1");
+    const btns2 = this.document.querySelector(".btns button.a2");
 
     
     // 클릭시 기능구현함수
@@ -42,5 +43,10 @@ window.addEventListener("DOMContentLoaded", function() {
     // 전달값이 없다면 소괄호 생략한 함수명만 이벤트속성에
     // 할당하면 바로 실행되지 않고 이벤트가 발생할때 실행된다
 
+    const af2 = function(){
+        console.log("앞");
+    };
+
+    btns2.onclick = af2;
     
 });
