@@ -41,4 +41,6 @@ window.addEventListener("DOMContentLoaded", function() {
     btns.onclick = aniFn;
     // 전달값이 없다면 소괄호 생략한 함수명만 이벤트속성에
     // 할당하면 바로 실행되지 않고 이벤트가 발생할때 실행된다
+
+    
 });
