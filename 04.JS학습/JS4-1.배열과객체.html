@@ -281,7 +281,7 @@
                 [ 객체의 속성 셋팅시 문자형 또는 변수형 사용하기 ]
                 
                 1. 문자형 속성 - 따옴표로 싸는 방법
-
+                
                 예) let obj = {"나는나":"호호호","너는너":"하하하"}
                 -> 문자형 속성의 객체 호출시
                 객체명[문자형속성명]
@@ -304,32 +304,117 @@
             ***************************************/
 
             // 객체 생성하기
+            const GU = {
+                name: "공유",
+                tall: "184cm",
+                weight: "74kg",
+                com: "매니지먼트숲",
+                work: "도깨비, 부산행",
+                msg: (txt)=>{ // txt 전달변수
 
+                    // 1. 메시지 띄우기
+                    alert("팬레터:" + txt);
+                    // 2. 배경이미지 넣기
+                    tg[4].style.background = "url(data:image/jpeg;base64,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) repeat-x top/auto 100%"
+                    // 3. 글자색
+                    tg[4].style.color = "#fff";
+                    // 4. 글자그림자
+                    tg[4].style.textShadow = "0 0 5px #000";
+                    // 5. 줄간격
+                    tg[4].style.lineHeight = "30px";
+                    // 6. 높이값 변경
+                    tg[4].style.height = "100px";
+                    // 7. 상단패딩 변경
+                    tg[4].style.paddingTop = "100px";
+                    // 8. 트랜지션
+                    tg[4].style.transition = "2s ease-in-out .5s";
+                } /////// msg 메서드 ///////
+                
+            }; /////////// GU객체 ///////////
+
+            // GU객체 찍어보기 -> 변경내용이 전체객체 찍기에 반영됨
+            console.log("원본GU:", GU);
+
+            // GU객체 속성중 work 값 업데이트
+            GU.work = "도깨비, 부산행, 오징어게임";
+
+            // GU객체 찍어보기
+            console.log("work값 변경 GU:", GU);
+
+            // 객체속성 추가하기
+            // 추가방법: Object객체의 속성 정의 메서드 사용함
+            // -> Object.defineProperty(객체명, 속성명, {value:속성값})
+            Object.defineProperty(GU, "foot", {value:"280cm"});
+            // GU객체에 발사이즈인 foot속성과 값을 추가함
+
+            // 객체속성 지우기
+            // delete 객체명.속성명 -> 선택속성 제거
+            // 추가속성 말고 이미 처음에 있는 속성을 제거해 보자
+            // delete GU.work;
 
             // GU객체 출력하기 ////////
             // 출력대상: tg[4]
-
+            
             // 줄간격 조정
+            tg[4].style.lineHeight = "24px"
 
 
             // 내용출력
-
+            tg[4].innerHTML = `
+                ${GU.name}
+                ${GU.weight} <br>
+                ${GU.work} <br>
+                ${GU.com}
+            `;
 
             // 툴팁 띄우기
             // setAttribute(속성명,값)
-
+            tg[4].setAttribute("title", GU.name+"plt");
 
             // 손가락모양
-
+            tg[4].style.cursor = "pointer";
 
             // 공유박스 클릭시 GU객체 메서드 호출하기
+            tg[4].onclick = ()=>{
+                GU.msg("\n ㅇㅇ");
+            };
 
 
             // 미션: tg[5]에 자신이 만든 객체의 정보를 출력하시오
             // 주제는 영화정보
             // 변수명도 자신이 지어본다!
             // 객체의 속성명도 변수형으로 자신이 지어본다!
+            const mb = {
+                name: "엔드게임",
+                감독: "루소형제",
+                개봉일: "2019년 4월 24일(한국기준)",
+                출연진: "로버트 다우니 주니어, 크리스 헴스워스, 크리스 에반스...",
+                시간: "3시간 2분",
+                AX: ()=>{
+                    console.log(AX);
 
+
+
+
+                }
+            };
+
+            console.log(mb);
+
+            tg[5].style.lineHeight = "26px"
+            tg[5].style.letterSpacing = "2px"
+            tg[5].setAttribute("title", mb.name);
+            tg[5].style.cursor = "pointer";
+            
+            tg[5].innerHTML = `
+                영화명: ${mb["name"]} |||
+                감독: ${mb.감독} <br>
+                개봉일: ${mb.개봉일} ||| 
+                시간: ${mb.시간} <br>
+                출연진: ${mb.출연진} <br>
+            `;
+            
+            tg[5].onclick = mb.AX;
 
 
         }; ////////////// loadFn 함수 //////////////////
