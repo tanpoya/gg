@@ -390,13 +390,52 @@
                 개봉일: "2019년 4월 24일(한국기준)",
                 출연진: "로버트 다우니 주니어, 크리스 헴스워스, 크리스 에반스...",
                 시간: "3시간 2분",
-                /* AX: ()=>{
-                    console.log(AX);
+                AX: ()=>{
+                    console.log("AX");
 
+                    // 2. 영화박스 만들고 아이프레임 넣기
+                    // 대상 #mvbx
+                    const mvbx = document.querySelector("#mvbx");
 
+                    // 영화박스에 아이프레임용 박스넣기
+                    mvbx.innerHTML = `
+                        <div id="mv">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ko2NWhXI9e8?autoplay=1" allow="autoplay"></iframe>
 
+                            <button class="cbtn">X</button>
+                        </div>
+                    `;
 
-                } */
+                        const mv = document.querySelector("#mv");
+                        let mst = mv.style;
+
+                        mst.position = "fixed";
+                        mst.top = "50%";
+                        mst.left = "50%";
+                        mst.transform = "translate(-50%, -50%)";
+                        mst.width = "1280px";
+                        mst.height = "720px";
+                        mst.backgroundColor = "#000";
+
+                        const cbtn = document.querySelector(".cbtn");
+                        let cst = cbtn.style;
+
+                        cst.position = "absolute";
+                        cst.top = "0";
+                        cst.right = "-70px";
+                        cst.width = "50px";
+                        cst.height = "50px";
+                        cst.backgroundColor = "#000";
+                        cst.border = "none";
+                        cst.color = "#fff";
+                        cst.fontSize = "40px";
+                        cst.fontWeight = "bold";
+                        cst.borderRadius = "50%";
+                        cst.cursor = "pointer";
+
+                        cbtn.onclick = () => mv.remove();
+
+                }
             };
 
             console.log(mb);
