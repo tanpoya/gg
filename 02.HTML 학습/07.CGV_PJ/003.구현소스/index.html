@@ -8,13 +8,12 @@
     <title>CGV에 오신것을 환영합니다!</title>
     <!-- 링크아이콘 폰트어썸 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
     <link rel="stylesheet" href="./css/main.css">
-
+    <!-- 메인 JS 연결 -->
     <script src="./js/main.js" defer></script>
-    <!-- 스크립트 연결시 defer(미루다) 속성을 사용하면
-    html 요소가 모두 로딩된 후 실행함
-    이방법을 안쓸때는 소스코드에서 로딩후 실행 설정을 하면됨 -->
+    <!-- 스크립트 연결시 defer(미루다...의미) 속성을 사용하면
+    html 요소가 모두 로딩된 후 실행함 
+    이방법을 안쓸때는 소스코드에서 로딩후 실행 설정을 하면됨!-->
 </head>
 
 <body>
@@ -26,23 +25,35 @@
             <!-- 1-2.GNB메뉴 -->
             <nav class="gnb">
                 <ul>
-
                     <li>
                         <a href="#">영화</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li>
+                                    <a href="#">무비차트</a>
+                                </li>
+                                <li>
+                                    <a href="#">HD 트레일러</a>
+                                </li>
+                                <li>
+                                    <a href="#">무비파인더</a>
+                                </li>
+                                <li class="bdt">
+                                    <a href="#">CGV아트하우스</a>
+                                </li>
+                            </ol>
+                        </div>
                     </li>
-
                     <li>
                         <a href="#">예매</a>
                     </li>
-
                     <li>
                         <a href="#">극장</a>
                     </li>
-
                     <li>
                         <a href="#">이벤트&컬처</a>
                     </li>
-
                 </ul>
             </nav>
         </header>
@@ -53,11 +64,9 @@
             <!-- 2-1.스크린박스 -->
             <div id="screen">
                 <!-- 유튜브 아이프레임 -->
-                <iframe
-                    src="https://www.youtube.com/embed/gX0CmJa5Gdk?autoplay=1&mute=1&controls=0&loop=1&playlist=gX0CmJa5Gdk"
-                    allow="autoplay"></iframe>
+                <iframe src="https://www.youtube.com/embed/vteD1f-SV5I?autoplay=1&mute=1&controls=0&loop=1&playlist=vteD1f-SV5I" allow="autoplay"></iframe>
                 <!-- allow="autoplay"는 유튜브
-                    동영상 요청시 자동재생의 필수다 -->
+                    동영상 요청시 자동재생의 필수다! -->
                 <!-- 
                     [iframe 요소 : inline frame]
                     - 다른 페이지를 삽입하는 요소
@@ -91,25 +100,24 @@
             <nav class="mlist">
                 <ul>
                     <li>
+                        <!-- 
+                            data-내가지은이름
+                            데이터를 저장하기 위한
+                            속성은 data-로 시작하면 된다!
+                          -->
                         <a href="#" data-mv="mI9oyFMUlfg">
                             <img src="./images/m1.jpg" alt="닥터스트레인지2">
 
                             <!-- 영화정보 -->
-                            <ol class="movtxt movtxt_1">
+                            <ol class="movtxt">
                                 <li>닥터스트레인지2</li>
                                 <li>베네딕트 컴버배치</li>
                                 <li>액션, 판타지, 모험</li>
                             </ol>
                         </a>
                     </li>
-
                     <li>
-                        <!-- 
-                            data-내가지은이름
-                            데이터를 저장하기 위한
-                            속성은 data- 로 시작한다
-                         -->
-                        <a href="#" data-mv="DSEfRVqjbFA">
+                        <a href="#" data-mv="aOu1ubTZdH8">
                             <img src="./images/m2.jpg" alt="쥬라기월드:도미니언">
 
                             <!-- 영화정보 -->
@@ -120,7 +128,6 @@
                             </ol>
                         </a>
                     </li>
-
                     <li>
                         <a href="#" data-mv="DpVAb7Bi5UQ">
                             <img src="./images/m3.jpg" alt="브로커">
@@ -133,7 +140,6 @@
                             </ol>
                         </a>
                     </li>
-
                     <li>
                         <a href="#" data-mv="aw9j_23nORs">
                             <img src="./images/m4.jpg" alt="범죄도시2">
@@ -146,9 +152,8 @@
                             </ol>
                         </a>
                     </li>
-
                     <li>
-                        <a href="#" data-mv="wXWiVmTEzkA">
+                        <a href="#" data-mv="OTiqmI6Ooqs">
                             <img src="./images/m5.jpg" alt="몬스터싱어">
 
                             <!-- 영화정보 -->
@@ -159,7 +164,6 @@
                             </ol>
                         </a>
                     </li>
-
                     <li>
                         <a href="#" data-mv="W7edvITC9g4">
                             <img src="./images/m6.jpg" alt="스파이터맨:노웨이홈">
@@ -172,7 +176,6 @@
                             </ol>
                         </a>
                     </li>
-
                 </ul>
             </nav>
         </main>
@@ -180,42 +183,21 @@
     <!-- 3. 하단영역 -->
     <div id="info">
         <footer class="info ibx">
-
-            <!-- 3-1. 하단로고 -->
+            <!-- 3-1.하단로고 -->
             <div>
                 <img src="./images/blogo.png" alt="하단로고">
             </div>
-
-            <!-- 3-2. 회사주소 -->
+            <!-- 3-2.회사주소 -->
             <div>
                 <address>
-                    (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)
-                    <br>
-                    대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662
-                    <br>
+                    (04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동) <br>
+                    대표이사 : 최병환사업자등록번호 : 104-81-45690통신판매업신고번호 : 2017-서울용산-0662 <br>
                     개인정보보호 책임자 : 정종민대표이메일 : cjcgvmaster@cj.netCGV고객센터 : 1544-1122
                 </address>
             </div>
-
-            <!-- 3-3. SNS박스 -->
+            <!-- 3-3.SNS박스 -->
             <div>
                 <ol class="sns">
-                    <li>
-                        <a href="#" class="fa-brands fa-square-instagram">
-                            <span class="ir">
-                                인스타그램 바로가기
-                            </span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="fa-brands fa-square-twitter">
-                            <span class="ir">
-                                트위터 바로가기
-                            </span>
-                        </a>
-                    </li>
-
                     <li>
                         <a href="#" class="fa-brands fa-square-facebook">
                             <span class="ir">
@@ -223,9 +205,22 @@
                             </span>
                         </a>
                     </li>
+                    <li>
+                        <a href="#" class="fa-brands fa-square-twitter">
+                            <span class="ir">
+                                트위터 바로가기
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="fa-brands fa-square-instagram">
+                            <span class="ir">
+                                인스타그램 바로가기
+                            </span>
+                        </a>
+                    </li>
                 </ol>
             </div>
-
         </footer>
     </div>
 </body>
