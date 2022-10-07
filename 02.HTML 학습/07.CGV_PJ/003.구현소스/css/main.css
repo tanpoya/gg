@@ -76,6 +76,9 @@ body{
     padding-bottom: 5px;
     /* 하단패딩 - 서브메뉴와 붙어있게(아웃문제해결) */
 }
+.gnb ul>li:hover .gnba {
+    color: red;
+}
 
 
 /* GNB 서브메뉴 */
@@ -91,7 +94,6 @@ body{
     background: url(../images/bg_smenu.png) no-repeat center/cover;
     border-radius: 5px;
     box-shadow: 0 0 5px #fff;
-
     display: none;
 }
 
@@ -122,6 +124,7 @@ body{
 .smenu ol{
     border: 1px solid #ccc;
     padding: 10px;
+    box-sizing: border-box;
 }
 /* 서브메뉴 li */
 .smenu li{
@@ -137,6 +140,22 @@ body{
 .smenu a:hover{
     color: red;
 }
+
+/* 아직 모름 */
+/* .smenu>ol>li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width .3s;
+}
+.smenu>ol>li:hover::after {
+    content: '';
+    width: 100%;
+} */
+
+
 /* 서브메뉴 오버시 이모지 가상요소로 넣기 */
 /* 이모지는 윈도우키+세미콜론(;) 단축키 */
 /* 영화 하위메뉴 이모지 */
