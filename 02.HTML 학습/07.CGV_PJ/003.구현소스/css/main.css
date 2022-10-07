@@ -23,8 +23,8 @@ body{
     background: url(../images/curtain.jpg) repeat-x;
     /* 가장위 */
     z-index: 9999;
-    top: -250px;
-    animation: titAni2 2s ease-in-out 3s forwards;
+    /* top: -250px; */
+    /* animation: titAni2 2s ease-in-out 3s forwards; */
 }
 /* 1-1.로고 */
 .tit{
@@ -46,17 +46,17 @@ body{
         text-shadow: 0 0 12px aquamarine;
     }
 } /* 키프레임 */
-@keyframes titAni2 {
+/* @keyframes titAni2 {
     to {
         top: 0;
     }
-}
+} */
 
 /* 1-2.GNB */
 .gnb{
     /* 앱솔루트 포지션 */
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     right: 20px;
     /* 부모는? .top */
 }
@@ -73,6 +73,8 @@ body{
     position: relative;
     font-size: 2rem;
     padding: 0 10px;
+    padding-bottom: 5px;
+    /* 하단패딩 - 서브메뉴와 붙어있게(아웃문제해결) */
 }
 
 /* GNB 서브메뉴 */
@@ -88,6 +90,12 @@ body{
     background: url(../images/bg_smenu.png) no-repeat center/cover;
     border-radius: 5px;
     box-shadow: 0 0 5px #fff;
+
+    display: none;
+}
+
+.gnb ul>li:hover .smenu{
+    display: block;
 }
 
 /* 가상요소로 삼각형 모양 만들기 */
@@ -130,10 +138,27 @@ body{
 }
 /* 서브메뉴 오버시 이모지 가상요소로 넣기 */
 /* 이모지는 윈도우키+세미콜론(;) 단축키 */
-.smenu a:hover::after{
+/* 영화 하위메뉴 이모지 */
+.gnb ul>li:nth-child(1) .smenu a:hover::after{
     content: '😍';
     float: right;
 }
+/* 예매 하위메뉴 이모지 */
+.gnb ul>li:nth-child(2) .smenu a:hover::after {
+    content: '✔';
+    float: right;
+}
+/* 극장 하위메뉴 이모지 */
+.gnb ul>li:nth-child(3) .smenu a:hover::after {
+    content: '🎬';
+    float: right;
+}
+/* 이벤트&컬처 하위메뉴 이모지 */
+.gnb ul>li:nth-child(4) .smenu a:hover::after {
+    content: '🎁';
+    float: right;
+}
+
 
 /* 서브메뉴 중 li 보더 상단 class */
 .bdt{
@@ -147,14 +172,14 @@ body{
     position: relative;
     height: 788px;
     background: url(../images/bg.jpg) no-repeat center;
-    top: -900px;
-    animation: cont 3s ease-out 1s forwards;
+    /* top: -900px; */
+    /* animation: cont 3s ease-out 1s forwards; */
 }
-@keyframes cont {
+/* @keyframes cont {
     to {
         top: 0;
     }
-}
+} */
 /* 2-1.스크린박스 */
 #screen{
     /* 앱솔루트 포지션 */
@@ -167,14 +192,14 @@ body{
     height: 397px;
     /* 부모는? .cont */
     background-color: #000;
-    opacity: 0;
-    animation: scrAni 2s linear 5s forwards;
+    /* opacity: 0; */
+    /* animation: scrAni 2s linear 5s forwards; */
 }
-@keyframes scrAni {
+/* @keyframes scrAni {
     to {
         opacity: 1;
     }
-}
+} */
 
 /* 유튜브 아이프레임 */
 #screen iframe{
