@@ -85,11 +85,21 @@
 /* 500px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {
 
+    .tit {
+        font-size: 10vw;
+    }
+    
+    /* GNB */
+    .gnb {
+        bottom: -14px;
+    }
+
     /* 메인 컨텐츠 박스 */
     .cont {
         background-position: top;
         background-size: 140%;
     }
+
 
     /* 메인 컨텐츠 박스 비율변경 */
     .cont::before {
@@ -119,7 +129,7 @@
     /* 상위 li */
     .mlist ul>li {
         /* 3등분의 적절한 조정 */
-        flex-basis: 30.6%;
+        flex-basis: 28.3%;
         /*
             기존에 flex: 1 등분할 설정
             되어서 flex-basis는
@@ -129,6 +139,23 @@
             flex-basis가 더 우선한다
         */
     }
+
+    /* 영화선택메뉴 글자 */
+    .movtxt {
+        font-size: 4vw;
+    }
+    /* .movtxt li:first-child {
+        font-size: 5vw;
+    } */
+
+    /* 회사주소 */
+    .info address {
+        font-size: 2vw;
+    }
+    .info address span {
+        display: none;
+    }
+
 }
 
 /* 500px 이하 미디어쿼리 끝 */
