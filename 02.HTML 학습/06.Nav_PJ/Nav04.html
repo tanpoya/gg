@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>유형2. 가로네비 서브별 드롭다운 가로형</title>
+  <title>유형4. 세로네비 서브별 드롭다운 세로형</title>
   <style>
     /* 초기화 */
     html,
@@ -33,6 +33,8 @@
       /* 포지션이 있어야 z-index적용됨!
         GNB 하위메뉴가 위에 오도록 z-index를 높인다! */
       background-color: lightskyblue;
+      width: 200px;
+      height: 600px;
     }
 
     /* ul 초기화 */
@@ -44,6 +46,7 @@
       /* width: 800px;
       margin: 0 auto; -> flex에서 중앙정렬설정 안씀 */
       /* outline: 1px solid red; */
+      flex-direction: column;
     }
 
     /* 가상요소로 clear설정하기 -> flex는 불필요 */
@@ -61,27 +64,6 @@
       /* outline: 1px dashed blue; */
       /* float: left; -> 사용안함 flex쓸거임 */
       /* box-sizing: border-box; */
-    }
-
-    /* 상위 li에 가상요소로 하위메뉴 100%배경바 만들기 */
-    .gnb>ul>li.on::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      /* 부모는? .gnb */
-      width: 100%;
-      height: 0; /* 65px; */
-      background-color: darkblue;
-      z-index: -1;
-      /* .smenu 보다 아래 */
-
-      /* 트랜지션 : 속시이지 -> .smenu와 동일 */
-      transition: height .4s ease-out;
-    }
-    /* 상위li.on에 마우스 오버시 */
-    .gnb>ul>li.on:hover::after {
-      height: 65px;
     }
 
     /* li사이에 구분선 넣기 */
@@ -156,10 +138,10 @@
       */
 
     /* 서브메뉴 */
-    .smenu {
+    .smenu{
       /* 앱솔루트 포지션 */
-      position: absolute;
-      /* width: 200px; */
+      /* position: absolute; */
+      width: 200px;
 
       /* 메뉴숨기기 - 높이값0, overflow:hidden*/
       height: 0;
@@ -179,18 +161,25 @@
 
     /* 상위메뉴 li 오버시 서브메뉴 보이기 */
     .gnb>ul>li:hover .smenu {
-      height: 65px;
+      height: 170px;
     }
-  
+    /* 두번째 메뉴 */
+    .gnb>ul>li:nth-child(2):hover .smenu {
+      height: 170px;
+    }
+    /* tp번째 메뉴 */
+    .gnb>ul>li:nth-child(3):hover .smenu {
+      height: 100px;
+    }
+
     /* 서브메뉴 ol */
-    .smenu ol {
-      display: flex;
+    .smenu ol{
       /* 패딩 */
       padding: 15px;
     }
 
     /* 서브메뉴 a */
-    .smenu a {
+    .smenu a{
       /* a요소 확장 */
       display: block;
 
@@ -200,15 +189,11 @@
       font-size: 14px;
       line-height: 35px;
 
-      padding: 0 10px;
-      margin: 0 10px;
-
       /* 트랜지션: 속시이지 */
       transition: .2s;
     }
-
     /* 서브메뉴 오버시 */
-    .smenu a:hover {
+    .smenu a:hover{
       background-color: lightskyblue;
       color: darkblue;
     }
@@ -227,14 +212,14 @@
 </head>
 
 <body>
-  <h1>유형2. 가로네비 서브별 드롭다운 가로형</h1>
+  <h1>유형4. 세로네비 서브별 드롭다운 세로형</h1>
   <!-- GNB 네비게이션 -->
   <nav class="gnb">
     <ul>
       <li>
         <a href="#"><span>Home</span></a>
       </li>
-      <li class="on">
+      <li>
         <a href="#"><span>웹개발</span></a>
         <!-- 서브메뉴 -->
         <div class="smenu">
@@ -254,19 +239,19 @@
           </ol>
         </div>
       </li>
-      <li class="on">
+      <li>
         <a href="#"><span>게시판</span></a>
         <!-- 서브메뉴 -->
         <div class="smenu">
-          <ol>
-            <li>
-              <a href="#">Q&amp;A</a>
-            </li>
-            <li>
-              <a href="#">방명록</a>
-            </li>
-          </ol>
-        </div>
+            <ol>
+              <li>
+                <a href="#">Q&amp;A</a>
+              </li>
+              <li>
+                <a href="#">방명록</a>
+              </li>
+            </ol>
+          </div>
       </li>
       <li>
         <a href="#"><span>프로필</span></a>
