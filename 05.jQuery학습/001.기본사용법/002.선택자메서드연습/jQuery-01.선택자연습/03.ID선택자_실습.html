@@ -1,31 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> ID 선택자  </title>
-<!-- 제이쿼리 라이브러리 -->
+    <head>
+        <meta charset="utf-8" />
+        <title>ID 선택자</title>
+        <!-- 제이쿼리 라이브러리 -->
+        <script src="./js/jquery-3.6.1.min.js"></script>
+        <!-- 이징과 색상 애니메이션을 위한 제이쿼리 UI -->
+        <script src="./js/jquery-ui.min.js"></script>
+        <script>
+            $(() => {
+                // [ 제이쿼리 글자넣기 메서드 : text() ]
+                // $(선택자).text(넣을글자).css()
+                // 이어서 메서드를 쓰는 방법을 메서드 체인이라 함
+                // 주어가 하나 나는 밥을 먹고 공부를 했다
 
-      
-</head>
-  
-<body>
+                // [ 제이쿼리 애니메이션 메서드 : animate() ]
+                // -> animate({CSS설정}, 시간, 이징, 함수)
+                // css설정 - css요소변경
+                // 시간 : 1/1000초(단위안씀) - 기본값: 400(안쓰면 적용)
+                // 이징 : 제이쿼리 이징(https://easings.net/ko)
+                //       -> 이징은 반드시 제이쿼리 UI가 있어야함
+                // 함수 : 콜백함수(애니메이션이 끝나면 실행하는 함수)
+            
 
-<div id="container">
+                // h2click -> #sub 감, 배경노랑, 글자파랑, 보더1px solid green 글자크기 42px 애니메이션 시간 0.8s
+                // 자 파랑 흰색 보더 3 s y fz52 0.8 1s
+                // 굿 검 빨 2 s purple 152 0.8 2
 
- <header>
-   <h2> 여기를 클릭하세요~!</h2>
- </header>
+                $("header h2").click(()=>{
+                  $("#sub").text("감")
+                  .css({border:"1px solid #000"})
+                  .animate({
+                    backgroundColor:"yellow",
+                    color:"blue",
+                    borderWidth:"10px",
+                    borderColor:"green",
+                    fontSize:"42px"
+                  }, 800);
 
- <nav>
-   <ul class="list">
-       <li id="sub">One</li>
-       <li id="main">Two</li>
-       <li id="total">Three</li>
-  </ul>
- </nav>
+                  $("#main").text("자").css({border:"1px solid #000"}).delay(1000)/* 애니앞에 지연시간 delay(초) */.animate({
+                    backgroundColor:"blue",
+                    color:"white",
+                    borderWidth:"3px",
+                    borderColor:"yellow",
+                    fontSize:"52px"
+                  }, 800);
 
-</div>
+                  $("#total").text("굿").css({border:"1px solid #000"}).delay(2000).animate({
+                    backgroundColor:"black",
+                    color:"red",
+                    borderWidth:"2px",
+                    borderColor:"purple",
+                    fontSize:"152px"
+                  }, 800);
 
-</body>
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="container">
+            <header>
+                <h2>여기를 클릭하세요~!</h2>
+            </header>
+
+            <nav>
+                <ul class="list">
+                    <li id="sub">One</li>
+                    <li id="main">Two</li>
+                    <li id="total">Three</li>
+                </ul>
+            </nav>
+        </div>
+    </body>
 </html>
-

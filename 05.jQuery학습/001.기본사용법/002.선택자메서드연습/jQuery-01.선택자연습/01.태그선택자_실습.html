@@ -1,36 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>태그 선택자</title>
+        <!-- 제이쿼리 라이브러리 -->
+        <script src="./js/jquery-3.6.1.min.js"></script>
+        <script>
+            /************************************************
+              [ 제이쿼리 기본 ]
 
-<head>
-  <meta charset="utf-8">
-  <title> 태그 선택자 </title>
-  <!-- 제이쿼리 라이브러리 -->
-  <script src="./jquery-3.6.1.min.js"></script>
+              - 제이쿼리는 JS를 쉽게 사용하기 위한 함수집합
+              - 흔히 이런 코드를 라이브러리 라고함
+              - 도서관에 가야 책을 빌리지 위에 반드시 호출하고 사용
 
-</head>
+              [ 제이쿼리 요소 선택법 ]
+              -> 기존 JS : document.get......./.querySelector.......
+              ->>>>> $(선택자)
 
-<body>
+              [ 제이쿼리 로딩구역 ]
+              -> 기존 JS : window.addEventListener("DOM..." ()=> {})
+              ->>>>> $(function(){코드})
+              ->>>>> $(()=>{코드})
 
-  <h1>나의 첫번째 제이쿼리!!!</h1>
-  <div id="container">
-    <header>
-      <h2> 여기를 클릭!!! </h2>
-      <h2> 여기를 클릭!!! </h2>
-      <h2> 여기를 클릭!!! </h2>
-      <h2> 여기를 클릭!!! </h2>
-      <h2> 여기를 클릭!!! </h2>
-    </header>
+              [ 제이쿼리 메서드 ]
+              -> 기존 JS : 이벤트로 함수를 할당하여 사용했음
+              ->>>>> 이벤트에 해당하는 메서드를 별도로 구현함
+              예) click() / mouseover() ...
+              ->>>>> 기타 유용한 메서드가 많이 구비되어 있다
+              예) append() / eq() / parent() ...
 
-    <nav>
-      <ul class="list">
-        <li id="first">One</li>
-        <li id="second">Two</li>
-        <li id="third">오버해봐~! 전체 배경색 바꿔!</li>
-      </ul>
-    </nav>
+              [ 제이쿼리 for문 ]
+              ->>> 기본적으로 선택한 요소가 다수이면 자동으로 돌아줌
+              ->>> 제이쿼리 for문은 each() 메서드가 있음
 
-  </div>
+              _______________________________________________________
 
-</body>
+              [ css 메서드 ]
+              1. $(선택자).css(속성명, 값)
+              -> 단 하나의 속성을 셋팅할때 사용
+              -> 주의: 속성명을 문자형으로만 쓸 수 있다.
+              (예: $(".my").css("font-size":"34px")
 
+              2. $(선택자).css({속성:값, 속성,:값, ...})
+              -> 다수의 CSS값을 셋팅할때 사용함
+              -> 하나의 값도 셋팅가능
+              -> 속성명은 문자형, 변수형 모두 사용 가능함
+              예: 문자형 속성명 -> "border-radius"
+                  변수형 속성명 -> borderRadius
+                (JS에서 style.속성명으로 사용한 변수형 속성명과 동일)
+            __________________________________________________________
+            
+            [ click 메서드 ]
+            - 형식: $(선택자).click(함수)
+            - 기능: 선택요소를 클릭하면 함수를 실행함
+            - 함수는 외부에 만들어도 되고 익명함수로 구현해도됨
+
+            ->>> 메서드 확장 
+            에컨데 mouseover, mouseout 등 많은 일반적인 이벤트가
+            메서드로 구현되어 있음
+
+            [ 일반적인 이벤트 메서드 ]
+            $(선택자).on(이벤트명, 함수)
+            예: $("a").on("click", ()=>{구현부})
+
+
+            ************************************************/
+            // 제이쿼리 로드구역 : jQB
+            $(() => {
+                // header를 클릭하면 아래 있는 h2 변경하기
+                $("header").click(() => {
+                    $("header h2").css({
+                        color: "red",
+                        fontSize: "50px",
+                        transform: "rotateY(720deg)",
+                        transition: "2s",
+                    });
+                });
+
+                // #third>span에 마우스 오버시 전체배경색 변경
+                $("#third span").mouseover(() => {
+                    $("body").css({
+                        backgroundColor: "pink",
+                        transition: "3s",
+                    });
+                });
+            }); //////////////// jQB
+        </script>
+    </head>
+
+    <body>
+        <h1>나의 첫번째 제이쿼리!!!</h1>
+        <div id="container">
+            <header>
+                <h2>여기를 클릭!!!</h2>
+                <h2>여기를 클릭!!!</h2>
+                <h2>여기를 클릭!!!</h2>
+                <h2>여기를 클릭!!!</h2>
+                <h2>여기를 클릭!!!</h2>
+            </header>
+
+            <nav>
+                <ul class="list">
+                    <li id="first">One</li>
+                    <li id="second">Two</li>
+                    <li id="third">
+                        <span>오버해봐~! 전체 배경색 바꿔!</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
 </html>
