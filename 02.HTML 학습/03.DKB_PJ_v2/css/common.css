@@ -164,7 +164,7 @@
 
 }
 .tmenu>ul{
-    float: right;
+    /* float: right; */
 }
 /* 탑메뉴 상위li */
 .tmenu>ul>li{

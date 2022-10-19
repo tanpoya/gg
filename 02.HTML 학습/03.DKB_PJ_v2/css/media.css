@@ -110,7 +110,7 @@
         top: auto;/* 기존top해제 */
         bottom: 5vh;
         /* 기존 width 100% 초기화 */
-        width: auto;
+        /* width: auto; */
         z-index: 9999;
         /* 보이게함! */
         display: block;
