@@ -60,7 +60,7 @@
 @media screen and (max-width:870px) {
 
     /* 없어질 요소들 : 상단메뉴, GNB, 하단링크 , 서브메뉴, 서브배경가상요소*/
-    .tmenu, .blink, .smenu, .gnb>ul>li.sm::after, .gnb>ul>li>a::after {
+    .tmenu, .gnb, .blink, .smenu, .gnb>ul>li.sm::after, .gnb>ul>li>a::after {
         display: none;
     }
 
@@ -74,16 +74,29 @@
         height: 80px;
     }
 
-    .logo {
+    /* 전체메뉴가 보일 경우 세팅 */
+    /* .ton.on = .top에 .on을 넣은 경우 적용 */
+    .top.on .logo {
         position: fixed;
         width: 100vw;
         text-align: center;
         z-index: 9999;
     }
-    .ham {
+    .top.on .ham {
         position: fixed;
-        z-index: 9999;
+        z-index: 9999;  
+        color: #fff;
     }
+    /* + 햄버거 가상요소 모양변경 */
+    .top.on .ham::before {
+        content: '×';
+        transform: scale(1.5);
+    }
+    /* GNB 보이기 */
+    .top.on .gnb {
+        display: block;
+    }
+
 
     /* GNB 메뉴 모바일형으로 변경하기 */
     .gnb {
