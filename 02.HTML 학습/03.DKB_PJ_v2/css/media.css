@@ -59,8 +59,8 @@
 /* 870이하 */
 @media screen and (max-width:870px) {
 
-    /* 없어질 요소들 : 상단메뉴, GNB, 하단링크 */
-    .tmenu, .gnb, .blink {
+    /* 없어질 요소들 : 상단메뉴, GNB, 하단링크 , 서브메뉴, 서브배경가상요소*/
+    .tmenu, .blink, .smenu, .gnb>ul>li.sm::after, .gnb>ul>li>a::after {
         display: none;
     }
 
@@ -72,6 +72,52 @@
     /* 상단영역 높이값 */
     .top {
         height: 80px;
+    }
+
+    .logo {
+        position: fixed;
+        width: 100vw;
+        text-align: center;
+        z-index: 9999;
+    }
+    .ham {
+        position: fixed;
+        z-index: 9999;
+    }
+
+    /* GNB 메뉴 모바일형으로 변경하기 */
+    .gnb {
+        /* 화면기준변경 포지션 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        /* 기존마진없앰 */
+        margin: 0;
+    }
+    /* GNB ul */
+    .gnb>ul {
+        padding-top: 20vh;
+        /* line-height가 10vh이므로
+        6개메뉴니까 60%. 나머지 40%의 반을
+        상단 패딩으로 설정하여 세로 중앙위치 */
+    }
+    /* GNB li */
+    .gnb>ul>li {
+        float: none;
+        /* float 해제 */
+        /* outline: 2px dotted yellow; */
+    }
+    /* GNB a */
+    .gnb>ul>li>a {
+        color: #fff;
+        font-size: 5vh;
+        text-align: center;
+        line-height: 10vh;
+        /* li의 높이를 만들어줌 */
     }
 
     /* 캐릭텉부모박스 */
