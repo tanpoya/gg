@@ -4,6 +4,30 @@
 <meta charset="utf-8">
 <title> 그룹 선택자  </title>
 
+<!-- 제이쿼리 라이브러리 -->
+<script src="./js/jquery-3.6.1.min.js"></script>
+<script>
+
+   $(()=>{
+      $("p, #nav li").click(e=>{
+         // 클릭된 요소 자신은? this
+         // 화살표함수는 event.currentTrget
+         // 익명함수에 이벤트 전달변수 (여기서는 e)
+         // 를 사용하여 e.currentTarget으로 써도됨
+         $(e.currentTarget).text("나나나").css({
+            fontSize:"72px",
+            color:"red",
+            transition: ".4s",
+            listStyle: "none"
+            
+         });
+
+      }); //////// click ///////////
+
+   }); /////// jQB ///////////
+
+</script>
+
 </head>
   
 <body>
