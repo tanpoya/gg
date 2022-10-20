@@ -269,7 +269,6 @@
                 } /////// for of /////////////
 
 
-
                 ///// 맨앞요소를 맨뒤로 이동하기 ////////////////////
                 // 이벤트 종류: click
                 // 이벤트 대상: .mvl
@@ -282,7 +281,18 @@
                 // -> 기존요소를 선택하면 이동이 됨!
                 /////////////////////////////////////////////////
                 
+                const mvl = document.querySelector(".mvl");
+                mvl.onclick = () => {
+                    console.log("뒤로가");
 
+                    // 2. 이동대상: 변수 ctg 아래 li중 첫번째 요소
+                    let fele = ctg.querySelectorAll("li")[0];
+                    // fele -> first element (첫번째 요소)
+
+                    // 3. 맨뒤로 이동 : appendChild(요소)
+                    ctg.appendChild(fele);
+
+                }; /////// click //////////
 
 
                 /// 맨뒤요소 맨앞으로 이동하기 ///////////////////////
@@ -296,7 +306,23 @@
                 // 넣을놈전놈 - 맨처음 li요소
                 //////////////////////////////////////////////////
 
+                const mvf = document.querySelector(".mvf");
+                mvf.onclick = () => {
+                    console.log("앞으로가");
 
+                    // 2. 이동대상: 변수 ctg 아래 li요소들
+                    let eles = ctg.querySelectorAll("li");
+
+                    // 3. 맨앞으로 이동
+                    // -> insertBefore(넣을놈,넣을놈전놈)
+                    // insertBefore(맨뒤li, 맨앞li)
+                    ctg.insertBefore(eles[eles.length - 1], eles[0]);
+                    // 맨뒤li -> eles[마지막번호]
+                    // 마지막번호 -> 개수 - 1
+                    // eles[eles.length - 1]
+                    // ※ 배열과 컬렉션의 마지막 순번은 항상 [개수 - 1]
+
+                }; //////// click /////////////
 
 
                 /************************************************* 
