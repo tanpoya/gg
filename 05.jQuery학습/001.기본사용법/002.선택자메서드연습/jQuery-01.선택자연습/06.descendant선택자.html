@@ -9,6 +9,7 @@
   // 아래의 각 li에 미니언즈 이미지를 웹으로 찾아서 html로 넣고 이미지크기를 w100으로 고정
   // 각 이미지 클릭시 이미지크기가 클릭할때마다 10px씩 커지게함과 동시에 한번은 오른쪽 한번은 왼쪽으로 10도씩 기울어지게 애니메이션
   $(()=>{
+
     $("li").css({
       listStyle:"none"
     });
@@ -25,15 +26,19 @@
     $(".list img").css({width:"100px"});
 
     $(".list img").click(function(){
-      
+
+      let a = 0;
+
       $(this).css({
         width:"+=10px",
-        transform: "rotate(10deg)",
+        // transform: "rotate(10deg)",
         transition: ".3s"
+
+
       });
 
     });
-
+  
   });
 </script>
 
