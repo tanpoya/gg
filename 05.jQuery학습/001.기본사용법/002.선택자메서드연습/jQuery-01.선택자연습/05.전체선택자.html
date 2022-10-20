@@ -4,6 +4,25 @@
 <meta charset="utf-8">
 <title> 전체 선택자 (*) </title>
 <!-- jQuery library -->
+<script src="./js/jquery-3.6.1.min.js"></script>
+<script>
+  $(()=>{
+    // body click 모든요소를 선택하여(*)
+    // 인터넷으로 검색한 이미지 주소를 배경이미지로 설정하여
+    // w200 h200
+
+    $("body").click(()=>{
+      $("body *").css({
+        background: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LV33QKJz7e3VCXl-U6z_F4lK8k9n_EOvUw&usqp=CAU) no-repeat center/cover",
+        width: "200px",
+        height: "200px"
+      });
+
+    });
+
+  });
+
+</script>
 
 </head>
   

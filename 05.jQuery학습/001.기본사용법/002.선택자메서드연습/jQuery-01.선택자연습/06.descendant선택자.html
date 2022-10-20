@@ -4,6 +4,39 @@
 <meta charset="utf-8">
 <title> descendant  선택자 </title>
 
+<script src="./js/jquery-3.6.1.min.js"></script>
+<script>
+  // 아래의 각 li에 미니언즈 이미지를 웹으로 찾아서 html로 넣고 이미지크기를 w100으로 고정
+  // 각 이미지 클릭시 이미지크기가 클릭할때마다 10px씩 커지게함과 동시에 한번은 오른쪽 한번은 왼쪽으로 10도씩 기울어지게 애니메이션
+  $(()=>{
+    $("li").css({
+      listStyle:"none"
+    });
+    $("#first").html(
+      '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LV33QKJz7e3VCXl-U6z_F4lK8k9n_EOvUw&usqp=CAU" alt="모코코">'
+    );
+    $("#second").html(
+      '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LV33QKJz7e3VCXl-U6z_F4lK8k9n_EOvUw&usqp=CAU" alt="모코코">'
+    );
+    $("#third").html(
+      '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LV33QKJz7e3VCXl-U6z_F4lK8k9n_EOvUw&usqp=CAU" alt="모코코">'
+    );
+
+    $(".list img").css({width:"100px"});
+
+    $(".list img").click(function(){
+      
+      $(this).css({
+        width:"+=10px",
+        transform: "rotate(10deg)",
+        transition: ".3s"
+      });
+
+    });
+
+  });
+</script>
+
 </head>
   
 <body>
