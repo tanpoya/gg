@@ -1,41 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>child(&gt;)선택자</title>
+        <!-- jQuery library -->
+        <script src="./js/jquery-3.6.1.min.js"></script>
+        <script>
+            $(() => {
+            //     $("#container").click(()=>{
+            //         $("#container>p").css({
+            //           backgroundColor: "yellow",
+            //           color: "green",
+            //           fontSize: "42px",
+            //           border: "5px dotted red"
+            //         });
+            //     });
+            // });
 
-<head>
-  <meta charset="utf-8">
-  <title> child(&gt;)선택자 </title>
-  <!-- jQuery library -->
-  
-</head>
+            $("#container").click(function(){
+              $(">p", this).css({
+                // $(선택자, this)
+                // this키워드를 사용한 직계선택법
+                // 선택자에 (>)를 사용함
+                backgroundColor: "yellow",
+                color: "green",
+                fontSize: "42px",
+                border: "5px dotted red"
+              });
+            });
+          });
+        </script>
+    </head>
 
-<body>
+    <body>
+        <div id="container">
+            <header>
+                <h2>Welcome mySite</h2>
+                <p>나는 손자 p태그다!</p>
+            </header>
 
-  <div id="container">
+            <nav>
+                <ul class="list">
+                    <li id="first">One</li>
+                    <li id="second">Two</li>
+                    <li id="third">Three</li>
+                </ul>
+            </nav>
 
-    <header>
-      <h2> Welcome mySite </h2>
-      <p>나는 손자 p태그다!</p>
-    </header>
+            <p>나는 직계자식 p태그다!</p>
+        </div>
 
-    <nav>
-      <ul class="list">
-        <li id="first">One</li>
-        <li id="second">Two</li>
-        <li id="third">Three</li>
-      </ul>
-    </nav>
-
-    <p>
-      나는 직계자식 p태그다!
-    </p>
-
-  </div>
-
-  <!---------- jQuery code Start ---------->
-  <script>
-
-  </script>
-
-</body>
-
+        <!---------- jQuery code Start ---------->
+        <script></script>
+    </body>
 </html>
