@@ -11,23 +11,8 @@
                 // li의 글자가 42px 커지면서 margin-left값이
                 // 50px로 변경되게 / 트랜지션도
 
-            //     $(".first").click(function () {
-            //         $("+li", this).css({
-            //             fontSize: "42px",
-            //             marginLeft: "50px",
-            //             color: "red",
-            //             // transition: ".5s ease-out"
-            //             transition: `
-            //                font-size .5s,
-            //                color 2s .5s,
-            //                margin-left 2s .5s
-            //             `
-            //         });
-            //     });
-            // });
-
-            $(".first").click((e) =>  {
-                    $("+li", e.currentTarget).css({
+                $(".first").click(function () {
+                    $("+li", this).css({
                         fontSize: "42px",
                         marginLeft: "50px",
                         color: "red",
@@ -40,6 +25,21 @@
                     });
                 });
             });
+
+            // $(".first").click((e) =>  {
+            //         $("+li", e.currentTarget).css({
+            //             fontSize: "42px",
+            //             marginLeft: "50px",
+            //             color: "red",
+            //             // transition: ".5s ease-out"
+            //             transition: `
+            //                font-size .5s,
+            //                color 2s .5s,
+            //                margin-left 2s .5s
+            //             `
+            //         });
+            //     });
+            // });
         </script>
     </head>
 

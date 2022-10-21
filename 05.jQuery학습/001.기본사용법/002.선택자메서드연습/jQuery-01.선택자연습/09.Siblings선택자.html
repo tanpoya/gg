@@ -1,52 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> Siblings(~) 틸드 선택자 </title>
-<!-- jQuery library -->
+    <head>
+        <meta charset="utf-8" />
+        <title>Siblings(~) 틸드 선택자</title>
+        <!-- jQuery library -->
+        <script src="./js/jquery-3.6.1.min.js"></script>
+        <script>
+            $(() => {
 
-</head>
-  
-<body>
+				// 크기설정 트랜지션 적용하려면
+				// 초기값이 필요함
+				$("li").css({
+					width: "100px",
+					height: "50px",
+					listStyle: "none"
+				});
 
-<div id="container">
+				$("li").click(function() {
+					$("~li", this).css({
+						width: "500px",
+						height: "300px",
+						background: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2LV33QKJz7e3VCXl-U6z_F4lK8k9n_EOvUw&usqp=CAU) no-repeat center/cover",
+						transition: "1s ease-out"
+					});
+				});
 
- <nav>
-   <ul class="list">
-     <li id="first">One</li>
-     <li id="second">Two</li>
-     <li id="third">Three</li>    
-     <li id="fourth">four</li>  
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-	 <li>하나더</li>
-  </ul>
- </nav>
- 
 
-</div>
+			});
+        </script>
+    </head>
 
-<!---------- jQuery code Start ---------->
+    <body>
+        <div id="container">
+            <nav>
+                <ul class="list">
+                    <li id="first">One</li>
+                    <li id="second">Two</li>
+                    <li id="third">Three</li>
+                    <li id="fourth">four</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                    <li>하나더</li>
+                </ul>
+            </nav>
+        </div>
 
-<script>
+        <!---------- jQuery code Start ---------->
 
-</script>
-
-</body>
+        <script></script>
+    </body>
 </html>
-
