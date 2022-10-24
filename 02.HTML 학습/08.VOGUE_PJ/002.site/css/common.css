@@ -56,9 +56,31 @@
 
 
 /*  1-1-2. 사이드메뉴  */
-.sideMenu {
+.smbx {
+    display: flex;
+    /* 수평방향정렬 - 오른쪽끝 */
+    justify-content: flex-end;
+    font-family: 'Roboto', nbg;
+    /* 글자체 Roboto, nbg */
+    font-size: 12px;
 
+    text-transform: uppercase;
 }
+.smbx>li>a {
+    display: block;
+    padding: 0 13px;
+    line-height: 44px;
+    color: #747474;
+}
+.smsub {
+    position: absolute;
+    border: 1px solid #e5e5e5;
+}
+/* 서브메뉴 a요소 */
+.smsub a {
+    
+}
+
 /****************** 1-2. 로고박스 ******************/
 .logo {
     height: 115px;
@@ -69,9 +91,6 @@
     min-height: 46px;
 }
 
-.smbx {
-    text-transform: uppercase;
-}
 
 
 
