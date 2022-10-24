@@ -12,8 +12,46 @@
 			width: 100%;
 			height: 100%;
 		}
+		.nav1 {
+			/* 영역선택 안되게 */
+			user-select: none;
+			/* 드래그 안되게 */
+			-webkit-user-drag: none;
+		}
+
 	</style>
-	
+<script src="./js/jquery-3.6.1.min.js"></script>	
+<script>
+	$(()=>{
+		// .nav1 아래 li를 클릭시 클릭된 li의 글자크기를 5px 동시에 글자색을 무지개색 순서로
+		$(".nav1 li").css({
+			fontSize: "42px",
+			textShadow: "0 0 10px #333",
+			cursor: "pointer",
+			width: "400px",
+			whiteSpace: "nowrap"
+		});
+
+		// 무지개색 배열
+		const rcolor = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+		// 배열순번변수
+		let cseq = 0;
+
+		$(".nav1 li").click(e=>{
+			// 클릭된 자신은 this지만
+			// 화살표함수는 e.currentTarget
+			$(e.currentTarget).css({
+				fontSize: "+=5px", // += 기존크기에 더함
+				color: rcolor[cseq]
+			});
+			// 무지개 색 순번 증가
+			cseq++;
+			if(cseq === 7)cseq = 0; // 한계수
+		});
+	});
+
+
+</script>
 
 </head>
 
