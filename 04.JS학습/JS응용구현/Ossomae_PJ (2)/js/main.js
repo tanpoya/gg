@@ -15,8 +15,18 @@ window.addEventListener("DOMContentLoaded", () => {
     // 이벤트 대상: .abtn
     const abtn = document.querySelectorAll(".abtn");
     // 0번째는 왼쪽버튼, 1번째는 오른쪽버튼
-    abtn[0].onclick = () => goSlide(0);
-    abtn[1].onclick = () => goSlide(1);
+    abtn[0].onclick = () => {
+        // 인터발지움 함수 호출
+        clearAuto();
+        // 슬라이드 이동함수 호출
+        goSlide(0);
+    };
+    abtn[1].onclick = () => {
+        // 인터발지움 함수 호출
+        clearAuto();
+        // 슬라이드 이동함수 호출
+        goSlide(1);
+    };
 
     // 광클금지 상태변수
     let prot = 0; // 0-허용,1-불허용
@@ -58,4 +68,34 @@ window.addEventListener("DOMContentLoaded", () => {
             // 맨뒤요소는 [개수-1]
         } /////////// else /////////
     } //////////// goSlide 함수 //////////
+
+    // 인터발용변수
+    let autoI;
+
+    // 자동넘기기
+    // 인터발함수를 지우려면 변수에 넣고
+    // clearInterval(변슈) 해야함
+    function slideAuto() {
+        autoI = setInterval(() => {
+            goSlide(1);
+        }, 2000);
+    };
+
+    // 인터발함수 최초호출
+    slideAuto();
+
+    // 타임아웃용 변수
+    let autoT;
+
+    // 인터발 지우기 함수
+    function clearAuto() {
+        console.log("지우기");
+        // 1. 인터발 지우기
+        clearInterval(autoI);
+        // 2. 타임아웃 지우기(실행쓰나미 방지)
+        clearTimeout(autoT);
+        // 3. 일정시간 후 다시 인터발 호출
+        autoT = setTimeout(slideAuto, 5000);
+
+    };
 }); ///////////// 로드구역 ///////////////////
