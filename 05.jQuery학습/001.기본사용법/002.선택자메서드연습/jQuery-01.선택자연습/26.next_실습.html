@@ -1,31 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title> Traversal- next </title>
+    <head>
+        <meta charset="utf-8" />
+        <title>Traversal- next</title>
+        <script src="./js/jquery-3.6.1.min.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <script>
+            $(() => {
+              /*
+                next() 메서드 - 선택요소의 다음 형제요소를 선택
+                nextAll() 메서드 - 선택요소의 다음 형제요소 모두를 선택
+              */
 
+              // #part1 을 클릭하면 다음형제요소의
+              // 크기를 width 200px height 200px로 애니
+              // 내부 글자는 안녕하세요
+              $("#part1").click(function(){
+                $(this).next().animate({
+                  width: "200px",
+                  height: "200px"
+                }, 700).text("안녕하세요")
+              })
 
-<style>
- div, p {float:left;margin:10px; background-color:#FFF;}
-  div#sub { width:80px; height:80px; border:#000 thin solid;}
-  p { width:50px; height:50px; border:#000 thin solid;}
-</style>
-</head>
-<body>
-<div id="container">
+                $();
+            }); /// jQB ///
+        </script>
 
-    <div id = "sub">
-      <p>div p:요기도클릭!</p>
-    </div>
-    <p id="part1">p:날클릭!</p>
-    <p>p</p>
-    <p>p</p>
-
-</div>
-<!---------- jQuery code Start ---------->
-<script>
-
-</script>
-
-</body>
+        <style>
+            div,
+            p {
+                float: left;
+                margin: 10px;
+                background-color: #fff;
+            }
+            div#sub {
+                width: 80px;
+                height: 80px;
+                border: #000 thin solid;
+            }
+            p {
+                width: 50px;
+                height: 50px;
+                border: #000 thin solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="sub">
+                <p>div p:요기도클릭!</p>
+            </div>
+            <p id="part1">p:날클릭!</p>
+            <p>p</p>
+            <p>p</p>
+        </div>
+        <!---------- jQuery code Start ---------->
+        <script></script>
+    </body>
 </html>
