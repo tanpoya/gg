@@ -106,6 +106,5 @@ window.addEventListener("DOMContentLoaded", () => {
         clearTimeout(autoT);
         // 3. 일정시간 후 다시 인터발 호출
         autoT = setTimeout(slideAuto, 5000);
-        
     };
 }); ///////////// 로드구역 ///////////////////
