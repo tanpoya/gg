@@ -1,65 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>parent</title>
+        <script src="./js/jquery-3.6.1.min.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <script>
+            $(() => { /////// jQB /////////////
 
-<head>
-  <meta charset="utf-8">
-  <title> parent </title>
-  
+              /*
+              [ parent() 메서드 ]
+              - 선택요소를 싸고 있는 부모요소를 선택함
+              -> 만약 parent()를 여러번 쓰면 쓴 횟수만큼 부모로 올라감
+              예) div>p>a>span 이런 구조라면
+                $("span").parent().parent() -> 부모들 중 p태그
+              */
 
-  <style>
-    #container {
-      border: 3px ridge blue;
-    }
+              // 미션: p태그를 클릭하면 부모요소의 배경색을 빨간색으로 변경하시오.
+              // animate() 사용  
+                $("p").click(function (){
+                  $(this).parent().animate({backgroundColor: "red"}, 1000);
+                })
+            }); /////// jQB /////////////
+        </script>
 
-    div,
-    p,
-    a {
-      float: left;
-      margin: 10px;
-      background-color: #FFF;
-      display: block;
-    }
+        <style>
+            #container {
+                border: 3px ridge blue;
+            }
 
-    div#sub {
-      width: 180px;
-      height: 180px;
-      border: #000 thin solid;
-    }
+            div,
+            p,
+            a {
+                float: left;
+                margin: 10px;
+                background-color: #fff;
+                display: block;
+            }
 
-    p {
-      width: 150px;
-      height: 150px;
-      border: #000 thin solid;
-    }
+            div#sub {
+                width: 180px;
+                height: 180px;
+                border: #000 thin solid;
+            }
 
-    a {
-      width: 130px;
-      height: 100px;
-      border: #000 thin solid;
-    }
-  </style>
-</head>
+            p {
+                width: 150px;
+                height: 150px;
+                border: #000 thin solid;
+            }
 
-<body>
-  <div id="container">
+            a {
+                width: 130px;
+                height: 100px;
+                border: #000 thin solid;
+            }
+        </style>
+    </head>
 
-    <div id="sub">
-      <p>div p
-        <a href="#">
-          div p a
-        </a>
-      </p>
-    </div>
-    <p id="part1">p</p>
-    <p>p</p>
-    <p>p</p>
-
-  </div>
-  <!---------- jQuery code Start ---------->
-  <script>
-
-  </script>
-
-</body>
-
+    <body>
+        <div id="container">
+            <div id="sub">
+                <p>
+                    div p
+                    <a href="#"> div p a </a>
+                </p>
+            </div>
+            <p id="part1">p</p>
+            <p>p</p>
+            <p>p</p>
+        </div>
+        <!---------- jQuery code Start ---------->
+        <script></script>
+    </body>
 </html>
