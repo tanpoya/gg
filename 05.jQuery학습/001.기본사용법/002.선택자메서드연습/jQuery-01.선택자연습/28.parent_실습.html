@@ -1,76 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>parent</title>
-        <script src="./js/jquery-3.6.1.min.js"></script>
-        <script src="./js/jquery-ui.min.js"></script>
-        <script>
-            $(() => { /////// jQB /////////////
 
-              /*
-              [ parent() 메서드 ]
-              - 선택요소를 싸고 있는 부모요소를 선택함
-              -> 만약 parent()를 여러번 쓰면 쓴 횟수만큼 부모로 올라감
-              예) div>p>a>span 이런 구조라면
-                $("span").parent().parent() -> 부모들 중 p태그
-              */
+<head>
+  <meta charset="utf-8">
+  <title> parent </title>
+  <!-- 제이쿼리 라이브러리 -->
+  <script src="./js/jquery-3.6.1.min.js"></script>
+  <!-- 제이쿼리 UI -->
+  <script src="./js/jquery-ui.min.js"></script>
+  <script>
+    $(()=>{///////// jQB //////////////////////
 
-              // 미션: p태그를 클릭하면 부모요소의 배경색을 빨간색으로 변경하시오.
-              // animate() 사용  
-                $("p").click(function (){
-                  $(this).parent().animate({backgroundColor: "red"}, 1000);
-                })
-            }); /////// jQB /////////////
-        </script>
+      /* 
+        [ parent() 메서드 ]
+        - 선택요소를 싸고 있는 부모요소를 선택함
+        -> 만약 parent()를 여러번 쓰면 쓴 횟수만큼 부모로 올라감!
+        예) div>p>a>span 이런 구조라면
+          $("span").parent().parent() -> 부모들 중 p태그임!
+      */
 
-        <style>
-            #container {
-                border: 3px ridge blue;
-            }
+      // 미션: p태그를 클릭하면 부모요소의 배경색을 빨간색으로 변경하시오.
+      // animate() 사용!
+      $("p").click(function(){
+        $(this).parent()
+        .animate({backgroundColor:"red"},1000);
+      });
 
-            div,
-            p,
-            a {
-                float: left;
-                margin: 10px;
-                background-color: #fff;
-                display: block;
-            }
 
-            div#sub {
-                width: 180px;
-                height: 180px;
-                border: #000 thin solid;
-            }
+      // parents(요소명) -> 부모들 중 특정 부모를 선택함!
 
-            p {
-                width: 150px;
-                height: 150px;
-                border: #000 thin solid;
-            }
+      // 미션: a를 클릭하면 부모들 중 
+      // p태그는 배경색을 노란색, 
+      // div태그는 배경색을 녹색으로 지정하시오.
+      $("a").click(function(e){ // e - 이벤트 전달변수
 
-            a {
-                width: 130px;
-                height: 100px;
-                border: #000 thin solid;
-            }
-        </style>
-    </head>
+        // 이벤트 버블링 막기!
+        e.stopPropagation();
+        // 위에 있는 p가 클릭되는 이벤트 전달현상을 막음!
 
-    <body>
-        <div id="container">
-            <div id="sub">
-                <p>
-                    div p
-                    <a href="#"> div p a </a>
-                </p>
-            </div>
-            <p id="part1">p</p>
-            <p>p</p>
-            <p>p</p>
-        </div>
-        <!---------- jQuery code Start ---------->
-        <script></script>
-    </body>
+        $(this) // a요소
+        .parents("p") // 부모들 중 p요소
+        .animate({backgroundColor:"yellow"},500);
+
+        $(this) // a요소
+        .parents("#sub") // 부모들 중 #sub요소
+        .animate({backgroundColor:"green"},1000);
+
+
+      }); /////// click //////////
+
+
+    }); //////////// jQB //////////////////////
+  </script>
+  
+
+  <style>
+    #container {
+      border: 3px ridge blue;
+    }
+
+    div,
+    p,
+    a {
+      float: left;
+      margin: 10px;
+      background-color: #FFF;
+      display: block;
+    }
+
+    div#sub {
+      width: 180px;
+      height: 180px;
+      border: #000 thin solid;
+    }
+
+    p {
+      width: 150px;
+      height: 150px;
+      border: #000 thin solid;
+    }
+
+    a {
+      width: 130px;
+      height: 100px;
+      border: #000 thin solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+
+    <div id="sub">
+      <p>div p
+        <a href="#">
+          div p a
+        </a>
+      </p>
+    </div>
+    <p id="part1">p</p>
+    <p>p</p>
+    <p>p</p>
+
+  </div>
+  <!---------- jQuery code Start ---------->
+  <script>
+
+  </script>
+
+</body>
+
 </html>
