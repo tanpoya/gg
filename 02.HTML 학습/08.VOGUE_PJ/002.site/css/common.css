@@ -201,6 +201,7 @@
 #top.on .logo {
     position: absolute;
     left: 0;
+    top: 0;
     padding: 10px;
     height: auto;
     margin-top: 0;
@@ -213,6 +214,13 @@
 /* 5. GNB메뉴 */
 #top.on .gnb {
     font-size: 14px;
+    min-height: 45px;
+}
+#top.on .gnb li {
+   padding-right: 35px;
+}
+#top.on .gnb li:last-child {
+    padding-right: 0;
 }
 #top.on .gnb a {
     color: #333;
@@ -222,6 +230,19 @@
     padding-top: 5px;
 }
 
+/* 미디어쿼리 (GNB마진left 수치적용) 1300px + 120px */
+@media screen and (max-width: 1420px) {
+    #top.on .gnb {
+        margin-left: 92px;
+        /* 왼쪽 공간 보정값 */
+    }
+}
+@media screen and (max-width: 860px) {
+    #top.on .gnb {
+        margin-left: 120px;
+        /* 왼쪽 공간 보정값 */
+    }
+}
 
 
 /*************** 2. 하단영역 ***************/
