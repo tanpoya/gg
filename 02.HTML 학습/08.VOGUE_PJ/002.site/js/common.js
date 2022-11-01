@@ -1,5 +1,7 @@
 // 보그 PJ 공통JS - common.js
 
+// const { default: $ } = require("../../../../05.jQuery학습/004.플러그인/009.swiper-4.1.0/swiper-4.1.0/src/utils/dom");
+
 // 제이쿼리 구역 길게쓰기도 있음
 // $(document).ready(function(){})
 
@@ -27,11 +29,27 @@ $(()=>{ ///////////// jQB //////////////////////
     // console.log("등장액션요쇼 개수: ", scAct.length);
     // length는 제이쿼리에서도 동일한 이름으로 개수를 가져옴
 
+    // 윈도우 높이 절반값
+    const hw = $(window).height()/2
+
     // 제이쿼리에서 for문대신 쓰는 each() 메서드
     // 요소.each((순번, 요소)=>{구현부})
     
     // 등장액션 클래스 요소의 위치를 배열에 담기
-    scAct.each()
+    // 조건:
+        // 현재스크롤 위치(scTop)가
+        // 등장액션요소 위치(scpos[순번]) - 상단영역크기(206) - hw
+        // 보다 커지면 해당 순번의 등장액션요소의 클래스 "on"을 추가한다
+        // -> 위의 조건에서 뺀값을 미리 세팅해 준다
+    scAct.each((idx, ele)=>{
+        scpos[idx] = $(ele).offset().top - 206 - hw;
+        // 시작위치보정: 원래위치 - 상단높이 - 윈도우절반
+        // $(ele) 제이쿼리 선택필수
+        // offset().top -> 맨위에서부터 top위치값
+    });
+
+    // 위치배열값 확인하기
+    console.log("위치배열값: ", scpos)
 
 
 
@@ -41,7 +59,7 @@ $(()=>{ ///////////// jQB //////////////////////
         // 스크롤 위치값
         scTop = $(this).scrollTop();
         //scrollTop() 메서드 - 세로스크롤 위치값을 리턴하는 메서드
-        // console.log(scTop);
+        console.log(scTop);
 
         // 1. 슬림메뉴 클래스on 적용
         // 기준위치는 스크롤위치 100px 이상
@@ -56,7 +74,7 @@ $(()=>{ ///////////// jQB //////////////////////
                 // 스크롤 아랫방향
                 topA./* removeClass("up") */css({top:-temp+"px"});
                 // removeClass("up")
-                console.log(temp);
+                // console.log(temp);
                 // height() - 패딩이 빠진 순수높이값
                 // innerHiehgt() - 패딩포함 내부높이값
             } else {
@@ -84,6 +102,12 @@ $(()=>{ ///////////// jQB //////////////////////
             tbtn.addClass("on");
         } else {
             tbtn.removeClass("on");
+        }
+
+        // 3. 등장액션 적용하기
+        
+        if(scTop > scpos[0]) {
+            scAct.eq(0).addClass("on")
         }
 
 
