@@ -32,6 +32,7 @@ $(()=>{ ///////////// jQB //////////////////////
             // 스크롤 방향에 따라 .up 추가 제거
             if(scTop > lastSc) {
                 topA.removeClass("up");
+                console.log(topA.height());
             } else {
                 topA.addClass("up");
                 // console.log("윗방향", lastSc);
