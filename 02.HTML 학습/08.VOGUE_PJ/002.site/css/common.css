@@ -189,17 +189,17 @@
     transition: .4s ease-out;
 }
 /* 스크롤방향에 따라 top값 변경하기 올라갈때 .up */
-#top.on.up {
+/* #top.on.up {
     top: 0;
-    /* 슬림메뉴 보이는 위치로 */
-}
-
-@media screen and (max-width: 505px) {
+    슬림메뉴 보이는 위치로
+} */
+/* JS가 직접 계산해서 top변경 -> 불필요해짐 */
+/* @media screen and (max-width: 505px) {
     #top.on {
         top: -150px;
         transition: .6s ease-out;
     }
-}
+} */
 
 /* 2. 상단영역 속박스(.top) 최소높이 해제 */
 #top.on .top {
@@ -298,4 +298,34 @@
 }
 .blink li:last-child a {
     font-weight: bold;
+}
+
+/* 위로가기 버튼 */
+.tbtn {
+    position: fixed;
+    bottom: -35px;
+    right: 75px;
+    width: 48px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #333;
+    border-radius: 4px 4px 0 0;
+    color: #fff;
+    z-index: 9999;
+    font-size: 12px;
+    /* 트랜지션 - bottom엔 적용되면 안되므로 별도지정함 */
+    transition: background-color .3s, opacity .3s;
+    opacity: 0;
+}
+
+/* 위로가기 버튼 보이기상태 */
+.tbtn.on {
+    opacity: 1;
+    bottom: 0;
+}
+
+/* 위로가기 버튼 오버시 */
+.tbtn:hover {
+    background-color: red;
 }
