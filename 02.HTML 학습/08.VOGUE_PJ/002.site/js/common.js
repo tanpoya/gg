@@ -1,6 +1,5 @@
 // 보그 PJ 공통JS - common.js
 
-// const { default: $ } = require("../../../../05.jQuery학습/004.플러그인/009.swiper-4.1.0/swiper-4.1.0/src/utils/dom");
 
 // 제이쿼리 구역 길게쓰기도 있음
 // $(document).ready(function(){})

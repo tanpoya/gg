@@ -165,6 +165,11 @@ font-family: 'Roboto Condensed', sans-serif;
     color: #fff;
 }
 
+/* 컨텐츠 타이틀 작은글자 */
+.cbx h2 small {
+    font-size: 14px;
+}
+
 /* 2-7. 배경공통 적용 클래스 */
 .bgi {
     background-repeat: no-repeat;
