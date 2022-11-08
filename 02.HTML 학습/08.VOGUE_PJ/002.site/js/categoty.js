@@ -131,6 +131,13 @@ function loadFn(cdata){ // cdata - 제이슨 전달값
         $(ele).html(data["타이틀"][idx]);
         // data["타이틀"][순번]
     }); ////// each /////////////
+
+    // (5) 타이틀 변경하기
+    // 대상: title 태그
+    // 데이터: 객체중 "제목"
+    $("title").prepend(data["제목"]);
+    // prepend() : 앞에 데이터추가(기존데이터 살아있음)
+    // 참고) append() : 뒤에 데이터추가
     
 
 
