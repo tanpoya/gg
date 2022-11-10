@@ -79,6 +79,91 @@ $(() => {
     btns.hide().first().show();
     // btns.hide().eq(2).show();
 
+    // 3. 공통함수 : actMini()
+    const actMini = (ele, seq, mtxt) => {
+        // 전달값 (ele - 버튼요소, seq - 방순번, mtxt - 메시지)
+
+        // 1. 클릭된 버튼 사라지기
+        $(ele).slideUp(300);
+        // slideUp(시간, 이징, 함수)
+        // 높이값이 0되면서 애니, 0된후 display:none처리함
+
+        // 2. 메시지 없애기 : .msg -> msg변수
+        msg.fadeOut(300);
+        // fadeOut(시간, 이징, 함수)
+        // 서서히 사라짐, 사라진후 display:none 처리됨 ****
+
+        // 3. 메시지 함수 : msgFn() + 다음버튼 보이기
+        const msgFn = txt => { // 하나면 소괄호 생략 화살표함수 () => {}
+            msg.text(txt) // 텍스트변경
+            .fadeIn(300); // 나타나기
+            // 다음버튼 보이기
+            $(ele).next().delay(500).slideDown(300);
+            // slideDown(시간, 이징, 함수)
+            // - 자동으로 원래 높이값 복원 애니
+            // - 최초상태는 항상 display:none이다
+        }; /////// msgFn 함수 //////////
+
+        // 4. 이동하기
+        // 위치: li 8번방 -> bd변수에 모든 li 있음
+        let pos = [];
+        // 대상: li의 몇번째(seq)
+        let room = bd.eq(seq);
+        // top 위치값
+        pos[0] = room.offset().top;
+        // left 위치값 : 중앙위치보정(+li절반-미니언즈절반)
+        pos[1] = room.offset().left + room.width() / 2;
+        // console.log(pos);
+
+        // 미니언즈 위치 이동하기 애니메이션
+        // 대상: .mi -> mi변수
+        mi.delay(500).animate({
+            top: pos[0] + "px",
+            left: pos[1] + "px"
+        }, 500, "easeOutQuint", msgFn(mtxt)); // 메시지호출: 콜백함수 msgFn(mtxt)
+        // animate({CSS설정}, 시간, "이징", 함수)
+        // 모든 제이쿼리 애니메이션 메서드에는
+        // 끝난후 실행함수가 있다(콜백함수)
+    }; ////// actMini 함수 //////////
+
+    // 4. 들어가기     버튼 클릭시 /////////////////
+    btns.first().click(function(){
+        actMini(this, 8, "와~ 아늑하다. 옆방으로 가보자.");
+
+    })
+    // 5. 옆방으로!    버튼 클릭시 /////////////////
+    .next().click(function(){
+        actMini(this, 9, "악");
+    })
+    // 6 .윗층으로 도망가!     버튼 클릭시 /////////////////
+    .next().click(function(){
+        
+    })
+    // 7. 다시옆방으로!    버튼 클릭시 /////////////////
+    .next().click(function(){
+        
+    })
+    // 8. 무서우니 윗층으로!   버튼 클릭시 /////////////////
+    .next().click(function(){
+        
+    })
+    // 9. 치료주사방으로!  버튼 클릭시 /////////////////
+    .next().click(function(){
+        
+    })
+    // 10. 3번방으로!   버튼 클릭시 /////////////////
+    .next().click(function(){
+        
+    })
+    // 11. 1번방으로!   버튼 클릭시 /////////////////
+    .next().click(function(){
+        
+    })
+    // 12.  헬기를 호출!     버튼 클릭시 /////////////////
+    .next().click(function(){
+        
+    })
+
 
 
 }); //////////////// jQB /////////////////////
