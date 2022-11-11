@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Page Scroll</title>
+    <title>One Page Scroll - Auto Scroll</title>
     <style>
         html,
         body{
@@ -12,6 +12,7 @@
             width: 100%;
             height: 100%;/* 보이는 화면기준 채우기 */
             /* body하위 요소의 높이값 %의 기준이됨! */
+            overflow: hidden; /* 스크롤바 없앰 */
         }
         /* 공통셋팅 */
         a{
@@ -162,22 +163,35 @@
                 // a 기본이동막기
                 e.preventDefault();
 
-                // 1. 클릭시 스크롤 위치 아이디 알아내기
-                let idnm = $(this).attr("href");
-                // console.log(idnm);
+                // 수정본: 스크롤바가 없어지면
+                // 위치값에 오작동이 나타나므로
+                // 한페이지 단위로 이동한다
+                // 메뉴li순번 === 페이지이동순번
+                // 이동단위: 윈도우 높이값
 
-                // 2. 해당 아이디박스 위치값 알아내기
-                let pos = $(idnm).offset().top;
-                // offset().top - top 위치값 리턴
-                console.log(pos);
+                // 1.클릭된 a요소의 부모 li 순번
+                let idx = $(this).parent().index(); // .gnb a의 부모 li 순번 구하기
+                console.log(idx);
 
-                // 3. 위치이동 스크롤 애니메이션
+                // 2. 위치이동 스크롤 애니메이션
                 // 전체스크롤 대상: html, body(최상위 부모2개 동시에)
                 $("html, body").animate({
-                    scrollTop: pos + "px"
+                    scrollTop: ($(window).height() * idx) + "px"
+                    // 윈도우 높이값 * 순번
                 }, 800, "easeInOutQuint");
 
             }) /////// click
+
+            /****************************************** 
+                마우스 휠 작동시 자동 스크롤 이동가능
+                *이벤트: mouwheel + DOMMouseScroll
+                -> wheel 이벤트가 최신이벤트
+                *대상: document
+                *메서드: $(선택자).on(이벤트명, 함수)
+            ******************************************/
+           $(document).on("mousewheel wheel", ()=>{
+                
+           }); //////////// wheel //////////////
 
 
 
