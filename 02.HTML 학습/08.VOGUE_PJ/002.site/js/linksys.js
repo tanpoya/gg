@@ -1,7 +1,5 @@
 // 보그 PJ 링크 시스템 JS - linksys.js
 
-const { default: $ } = require("../../../../05.jQuery학습/004.플러그인/009.swiper-4.1.0/swiper-4.1.0/src/utils/dom");
-
 $(() => {
     ///////////// jQB //////////////////////
 
