@@ -152,7 +152,7 @@ root8.render(myele8);
 
 let time = 8;
 
-const myele9 = (
+const myele9 =( 
     <React.Fragment>
         <h1>지금 몇시지? {time}시야!</h1>
         <h1>{time > 9 ? "지금 집에 들어와!" : "더 놀다와~!"}</h1>
