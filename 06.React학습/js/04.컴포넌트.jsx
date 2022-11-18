@@ -1,5 +1,10 @@
 // 04.리액트 컴포넌트 JSX
 
+// 어벤져스 컴포넌트 import 하기
+import Avengers from "./Avengers";
+// import하는 js/jsx파일의 확장자는 생략가능함
+
+
 /************************************************
     [ 리액트 컴포넌트 ]
     - 컴포넌트는 HTML 요소를 반환하는 함수!
@@ -7,7 +12,7 @@
     { 특징 }
     1. 컴포넌트는 독립적이고 재사용이 가능한 코드집합
     2. JS함수와는 비슷하지만 
-       HTML코드 반환이 필수라는점이 다름!
+        HTML코드 반환이 필수라는점이 다름!
     3. 컴포넌트 다음 2가지다.
         1) 클래스 컴포넌트
         2) 함수 컴포넌트
@@ -94,3 +99,80 @@ const root3 = ReactDOM.createRoot(document.getElementById("root3"));
 root3.render(<Favorite color="검정색" food="만두" hobby="게임" />);
 // 함수 컴포넌트에서는 표현식안에서 {porps.호출시사용한속성명}
 // 여기서는 {props.color}
+
+// 컴포넌트 재사용 호출
+const root4 = ReactDOM.createRoot(
+    document.getElementById("root4"));
+root4.render(<Favorite color="파란색" food="짜장면" hobby="활쏘기" />);
+
+/*********************************************************
+
+    다른 컴포넌트 내부에서 다른 컴포넌트를 호출할 수 있다
+
+*********************************************************/
+function Ans() {
+    return <h2>김씨가 똑하고 팔이 부려졌대</h2>
+} ///// Ans
+
+function Who() {
+    return (
+        <React.Fragment>
+            <h1>김똑팔이가 누구야?</h1>
+            <Ans />
+        </React.Fragment>
+    );
+} /////// Who
+
+const root5 = ReactDOM.createRoot(document.getElementById("root5"));
+root5.render(<Who />);
+
+/*********************************************************
+    [ 컴포넌트의 파일분리 ]
+    리액트는 코드를 재사용히는 것이므로
+    컴포넌트를 별도의 파일로 분할 하는것이 일반적이다
+
+    {분할방법}
+    1. jsx의 새파일을 생성한다
+    2. 대문자로 시작하는 컴포넌트를 구현한다
+    3. 분할구현된 jsx파일을 import하여 호출한다
+    -> 일반적으로 js파일 상단에 import 키워드를 불러오면
+    되는데 지금 사용하는 CDN방식의 바벨모듈에서는
+    주의 사항이 있으니 참고 바란다(아래참고)
+
+*********************************************************/
+
+const root6 = ReactDOM.createRoot(document.getElementById("root6"));
+root6.render(<Avengers />);
+
+/************************************************* 
+    [ 바벨을 사용할때 모듈로 파일 호출시 주의사항! ]
+    ____________________________________________
+
+        설치형이 아닌 CDN방식의 바벨은 호출셋업의 시차로
+    바로 모듈을 호출하면 에러가 발생한다!
+    따라서 모듈을 사용할 파일을 아래와 같은 형식으로
+    메인 html 상단에 호출해 줘야만 한다!!!
+
+    -> 상단에 모듈화한 JS를 먼저 불러준다!
+
+    <script src="모듈화한js" 
+    data-plugins="transform-es2015-modules-umd" 
+    type="text/babel"></script>
+
+    -> 아래쪽에 모듈을 호출하는 JS를 불러준다!
+
+    <script src="모듈을 호출하는 JS" 
+    data-plugins="transform-es2015-modules-umd" 
+    type="text/babel"></script>
+
+    ->>> 위의 호출 속성 중 기본적으로
+    type="text/babel" 은 당연히 해야하고
+
+    ->>> 여기에 더하여 하나의 속성을 추가한다!
+    data-plugins="transform-es2015-modules-umd"
+
+    이 속성과 값이 바벨에서 모듈을 사용하게 하는
+    es2015 즉 ES6버전에서의 모듈문법을 사용하게끔 해준다!
+
+
+*************************************************/
