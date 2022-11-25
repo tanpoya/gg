@@ -87,7 +87,7 @@ $(() => {
 
         // 3. 페이지 이동하기
         if (atxt === "로그인" || atxt === "회원가입" || atxt === "갤러리") {
-            location.href = url + ".html";
+            location.href = url + ".jsp";
         } ////// if //////
         else {
             // 기타 sns는 새창열기(window.open())
@@ -102,7 +102,7 @@ $(() => {
         메인로고 링크 셋팅하기
     **********************************/
     $(".logo a").click(() => {
-        location.href = "index.html";
+        location.href = "index.jsp";
     });
 
     /********************************** 
@@ -124,7 +124,7 @@ $(() => {
         // 2. 서브페이지 이동하기
         if (atxt !== "search") {
             // 검색이 아니면!
-            location.href = "category.html?cat=" + encodeURIComponent(atxt);
+            location.href = "category.jsp?cat=" + encodeURIComponent(atxt);
             // 카테고리를 구분하기 위한 파라미터 키=값 쌍을 보냄
             // cat=카테고리명
             // 이것을 받아서 페이지 셋업을 한다!
