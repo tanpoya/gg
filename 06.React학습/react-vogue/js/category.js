@@ -4,7 +4,7 @@ import data from "cat";
 /************************************************ 
     [1] 메인 카테고리 렌더링 컴포넌트 : Render
 ************************************************/
-function Render(props) {
+function Render() {
     const [showNav, setShowNav] = React.useState(null);
 
     // 파리미터 전달값 받기
